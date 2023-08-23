@@ -14,9 +14,11 @@ import { Brand } from '../../components';
 import { useTheme } from '../../hooks';
 import { useLazyFetchOneQuery } from '../../services/modules/users';
 import { changeTheme, ThemeState } from '../../store/theme';
+import { useNavigation } from "@react-navigation/native";
 import i18next from 'i18next';
 
 const Example = () => {
+  const navigation = useNavigation<any>()
   const { t } = useTranslation(['example', 'welcome']);
   const {
     Common,
@@ -228,6 +230,18 @@ const Example = () => {
           >
             <Image
               source={Images.icons.translate}
+              style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View>
+          <TouchableOpacity
+            style={[Common.button.circle, Gutters.regularBMargin]}
+            onPress={() => navigation.navigate('Camera')}
+          >
+            <Image
+              source={Images.icons.colors}
               style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
             />
           </TouchableOpacity>
