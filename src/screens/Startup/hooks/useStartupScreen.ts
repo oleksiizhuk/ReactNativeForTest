@@ -1,9 +1,9 @@
-import { setDefaultTheme } from "../../../store/theme";
-import { useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { setDefaultTheme } from '../../../store/theme';
+import { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 export const useStartupScreen = () => {
-  const navigation = useNavigation<any>()
+  const navigation = useNavigation<any>();
 
   const init = async () => {
     await new Promise(resolve =>
@@ -23,7 +23,5 @@ export const useStartupScreen = () => {
     init();
   }, []);
 
-  return {
-
-  }
-}
+  return {};
+};

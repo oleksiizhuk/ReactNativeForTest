@@ -8,13 +8,19 @@ import {
   Image,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from '@react-navigation/native';
 import i18next from 'i18next';
-import { Brand } from "../../atoms";
-import { useTheme } from "../../../hooks";
+import { Brand } from '../../atoms';
+import { useTheme } from '../../../hooks';
 
-export const ExampleTemplate = ({ onChangeTheme, onChangeLanguage, fetchOne, isFetching, isLoading }: any) => {
-  const navigation = useNavigation<any>()
+export const ExampleTemplate = ({
+  onChangeTheme,
+  onChangeLanguage,
+  fetchOne,
+  isFetching,
+  isLoading,
+}: any) => {
+  const navigation = useNavigation<any>();
   const { t } = useTranslation(['example', 'welcome']);
   const {
     Common,

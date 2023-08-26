@@ -1,17 +1,13 @@
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { useTheme } from "../../../hooks";
-import { useDispatch } from "react-redux";
-import { useLazyFetchOneQuery } from "../../../services/modules/users";
-import { Alert } from "react-native";
-import { changeTheme, ThemeState } from "../../../store/theme";
-import i18next from "i18next";
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { useLazyFetchOneQuery } from '../../../services/modules/users';
+import { Alert } from 'react-native';
+import { changeTheme, ThemeState } from '../../../store/theme';
+import i18next from 'i18next';
 
 export const useExampleData = () => {
   const { t } = useTranslation(['example', 'welcome']);
-  const {
-    darkMode: isDark,
-  } = useTheme();
   const dispatch = useDispatch();
 
   const [fetchOne, { data, isSuccess, isLoading, isFetching }] =
@@ -22,7 +18,7 @@ export const useExampleData = () => {
       // @ts-ignore
       Alert.alert(t('Example:helloUser', { name: data.name }));
     }
-  }, [isSuccess, data]);
+  }, [isSuccess, data, t]);
 
   const onChangeTheme = ({ theme, darkMode }: Partial<ThemeState>) => {
     dispatch(changeTheme({ theme, darkMode }));
@@ -36,6 +32,6 @@ export const useExampleData = () => {
     onChangeLanguage,
     fetchOne,
     isFetching,
-    isLoading
-  }
-}
+    isLoading,
+  };
+};

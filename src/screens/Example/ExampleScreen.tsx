@@ -1,17 +1,18 @@
 import React from 'react';
-import { ExampleTemplate } from "../../components/teamplate";
-import { useExampleData } from "./hooks/useExampleData";
+import { ExampleTemplate } from '../../components/teamplate';
+import { useExampleData } from './hooks/useExampleData';
 
 export const ExampleScreen = () => {
-  const {
-    onChangeTheme,
-    onChangeLanguage,
-    fetchOne,
-    isFetching,
-    isLoading
-  } = useExampleData()
+  const { onChangeTheme, onChangeLanguage, fetchOne, isFetching, isLoading } =
+    useExampleData();
 
   return (
-    <ExampleTemplate onChangeTheme={onChangeTheme} onChangeLanguage={onChangeLanguage} fetchOne={fetchOne} isFetching={isFetching} isLoading={isLoading}/>
+    <ExampleTemplate
+      onChangeTheme={onChangeTheme}
+      onChangeLanguage={onChangeLanguage}
+      fetchOne={fetchOne}
+      isFetching={isFetching}
+      isLoading={isLoading}
+    />
   );
 };

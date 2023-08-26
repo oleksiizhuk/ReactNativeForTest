@@ -8,7 +8,7 @@ import {
 import { StartupScreen } from '../screens';
 import { useTheme } from '../hooks';
 import { MainNavigator } from './Main';
-import { CameraScreen } from "../screens";
+import { CameraScreen } from '../screens';
 import { useFlipper } from '@react-navigation/devtools';
 import { ApplicationStackParamList } from '../../@types/navigation';
 

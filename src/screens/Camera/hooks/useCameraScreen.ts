@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useCameraScreen = () => {
-  const [camera, setCamera] = useState<any>(null)
+  const [camera, setCamera] = useState<any>(null);
   const takePicture = async () => {
     if (camera) {
       const options = { quality: 0.5, base64: true };
@@ -12,6 +12,6 @@ export const useCameraScreen = () => {
 
   return {
     setCamera,
-    takePicture
-  }
-}
+    takePicture,
+  };
+};
