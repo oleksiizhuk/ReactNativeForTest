@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../../../hooks";
 import { useDispatch } from "react-redux";
@@ -8,14 +8,8 @@ import { changeTheme, ThemeState } from "../../../store/theme";
 import i18next from "i18next";
 
 export const useExampleData = () => {
-
   const { t } = useTranslation(['example', 'welcome']);
   const {
-    Common,
-    Fonts,
-    Gutters,
-    Layout,
-    Images,
     darkMode: isDark,
   } = useTheme();
   const dispatch = useDispatch();
@@ -25,6 +19,7 @@ export const useExampleData = () => {
 
   useEffect(() => {
     if (isSuccess && data?.name) {
+      // @ts-ignore
       Alert.alert(t('Example:helloUser', { name: data.name }));
     }
   }, [isSuccess, data]);

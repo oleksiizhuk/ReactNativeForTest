@@ -1,8 +1,8 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { RNCamera } from "react-native-camera";
-import React from "react";
+import React, { memo } from "react";
 
-export const CameraTemplate = ({ setCamera, takePicture }: any) => {
+export const CameraTemplate = memo(({ setCamera, takePicture }: any) => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -15,4 +15,4 @@ export const CameraTemplate = ({ setCamera, takePicture }: any) => {
       </TouchableOpacity>
     </View>
   )
-}
+})
