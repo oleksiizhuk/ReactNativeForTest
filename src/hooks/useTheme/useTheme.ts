@@ -9,14 +9,14 @@ import {
   Layout,
   themes,
   DefaultVariables,
-} from '../theme';
-import { ThemeState } from '../store/theme';
+} from '../../theme';
+import { ThemeState } from '../../store/theme';
 import {
   ThemeVariables,
   Theme,
   ThemeNavigationTheme,
   ThemeNavigationColors,
-} from '../../@types/theme';
+} from '../../../@types/theme';
 
 export default function () {
   // Get the scheme device

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
-import Brand from './Brand';
+import Brand from '../Brand';
 import { Provider } from 'react-redux';
-import { store } from '../../store';
+import { store } from '../../../../store';
 
 test('render correctly', () => {
   const component = (

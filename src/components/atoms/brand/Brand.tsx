@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Image, DimensionValue } from 'react-native';
-import { useTheme } from '../../hooks';
+import { useTheme } from '../../../hooks';
 
-type Props = {
+export type Props = {
   height?: DimensionValue;
   width?: DimensionValue;
   mode?: 'contain' | 'cover' | 'stretch' | 'repeat' | 'center';
 };
 
-const Brand = ({ height, width, mode }: Props) => {
+export const Brand = ({ height, width, mode }: Props) => {
   const { Layout, Images } = useTheme();
 
   return (
@@ -28,5 +28,3 @@ Brand.defaultProps = {
   width: 200,
   mode: 'contain',
 };
-
-export default Brand;

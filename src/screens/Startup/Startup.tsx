@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { useTheme } from '../../hooks';
-import { Brand } from '../../components';
+import { Brand} from "../../components/atoms";
 import { setDefaultTheme } from '../../store/theme';
 import { ApplicationScreenProps } from '../../../@types/navigation';
 

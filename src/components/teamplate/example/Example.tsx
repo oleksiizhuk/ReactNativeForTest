@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   View,
   ActivityIndicator,
@@ -6,18 +6,14 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
-  Alert,
 } from 'react-native';
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Brand } from '../../components';
-import { useTheme } from '../../hooks';
-import { useLazyFetchOneQuery } from '../../services/modules/users';
-import { changeTheme, ThemeState } from '../../store/theme';
 import { useNavigation } from "@react-navigation/native";
 import i18next from 'i18next';
+import { Brand } from "../../atoms";
+import { useTheme } from "../../../hooks";
 
-const Example = () => {
+export const ExampleTemplate = ({ onChangeTheme, onChangeLanguage, fetchOne, isFetching, isLoading }: any) => {
   const navigation = useNavigation<any>()
   const { t } = useTranslation(['example', 'welcome']);
   const {
@@ -28,24 +24,6 @@ const Example = () => {
     Images,
     darkMode: isDark,
   } = useTheme();
-  const dispatch = useDispatch();
-
-  const [fetchOne, { data, isSuccess, isLoading, isFetching }] =
-    useLazyFetchOneQuery();
-
-  useEffect(() => {
-    if (isSuccess && data?.name) {
-      Alert.alert(t('example:helloUser', { name: data.name }));
-    }
-  }, [isSuccess, data]);
-
-  const onChangeTheme = ({ theme, darkMode }: Partial<ThemeState>) => {
-    dispatch(changeTheme({ theme, darkMode }));
-  };
-
-  const onChangeLanguage = (lang: 'fr' | 'en') => {
-    i18next.changeLanguage(lang);
-  };
 
   return (
     <ScrollView
@@ -250,5 +228,3 @@ const Example = () => {
     </ScrollView>
   );
 };
-
-export default Example;
