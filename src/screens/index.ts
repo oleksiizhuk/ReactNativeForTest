@@ -1,3 +1,3 @@
-export { default as Startup } from './Startup/Startup';
+export * from './Startup/StartupScreen';
 export * from './Example/ExampleScreen';
-export * from './Camera/Camera'
+export * from './Camera/CameraScreen'

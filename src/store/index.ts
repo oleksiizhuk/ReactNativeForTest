@@ -12,7 +12,6 @@ import {
   Storage,
 } from 'redux-persist';
 import { MMKV } from 'react-native-mmkv';
-
 import { api } from '../services/api';
 import theme from './theme';
 

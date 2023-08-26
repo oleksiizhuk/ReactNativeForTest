@@ -5,16 +5,16 @@ import {
   NavigationContainer,
   useNavigationContainerRef,
 } from '@react-navigation/native';
-import { Startup } from '../screens';
+import { StartupScreen } from '../screens';
 import { useTheme } from '../hooks';
-import MainNavigator from './Main';
-import { Camera } from "../screens";
+import { MainNavigator } from './Main';
+import { CameraScreen } from "../screens";
 import { useFlipper } from '@react-navigation/devtools';
 import { ApplicationStackParamList } from '../../@types/navigation';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
-const ApplicationNavigator = () => {
+export const ApplicationNavigator = () => {
   const { Layout, darkMode, NavigationTheme } = useTheme();
   const { colors } = NavigationTheme;
 
@@ -27,13 +27,11 @@ const ApplicationNavigator = () => {
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Startup" component={Startup} />
+          <Stack.Screen name="Startup" component={StartupScreen} />
           <Stack.Screen name="Main" component={MainNavigator} />
-          <Stack.Screen name="Camera" component={Camera} />
+          <Stack.Screen name="Camera" component={CameraScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
   );
 };
-
-export default ApplicationNavigator;

@@ -25,7 +25,7 @@ export const useExampleData = () => {
 
   useEffect(() => {
     if (isSuccess && data?.name) {
-      Alert.alert(t('example:helloUser', { name: data.name }));
+      Alert.alert(t('Example:helloUser', { name: data.name }));
     }
   }, [isSuccess, data]);
 

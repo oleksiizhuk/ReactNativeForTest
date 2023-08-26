@@ -1,1 +1,2 @@
-export * from './example'
+export * from './Example'
+export * from './Startup'
