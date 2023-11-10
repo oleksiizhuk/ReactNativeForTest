@@ -22,7 +22,7 @@ export default function () {
   // Get the scheme device
   const colorScheme = useColorScheme();
 
-  // Get current theme from the store
+  // Get current theme from the storeSaga
   const currentTheme = useSelector(
     (state: { theme: ThemeState }) => state.theme.theme,
   );
