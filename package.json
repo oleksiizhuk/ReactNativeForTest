@@ -10,7 +10,12 @@
     "test": "jest",
     "type-check": "tsc",
     "test:report": "jest --collectCoverage --coverageDirectory=\"./coverage\" --ci --reporters=default --reporters=jest-junit --coverage",
-    "pod-install": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install && cd .."
+    "pod-install": "cd ios && RCT_NEW_ARCH_ENABLED=1 bundle exec pod install && cd ..",
+    "clear:ios": "cd ios && rm -fr Pods && rm -fr Podfile.lock && rm -fr build && cd ..",
+    "reinstall:ios": "yarn clear:ios && cd ios && pod install && cd ..",
+    "clear:react": "rm -fr node_modules && rm -rf yarn.lock",
+    "reinstall:react": "yarn clear:react && yarn",
+    "reset:all": "yarn reinstall:react && yarn reinstall:ios"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.2.9",
