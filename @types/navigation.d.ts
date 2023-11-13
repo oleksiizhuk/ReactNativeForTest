@@ -9,6 +9,9 @@ export type ApplicationStackParamList = {
   Startup: undefined;
   Main: NavigatorScreenParams<MainParamsList>;
   Camera: undefined;
+  Topic: undefined;
+  AnimationTopic: undefined;
+  AnimatedAPIScreen: undefined;
 };
 
 export type ApplicationScreenProps =

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useCameraScreen } from './hooks/useCameraScreen';
-import { CameraTemplate } from '../../components/teamplate/Camera';
+import { CameraTemplate } from '../../template/Camera';
 
 export const CameraScreen = memo(() => {
   const { setCamera, takePicture } = useCameraScreen();

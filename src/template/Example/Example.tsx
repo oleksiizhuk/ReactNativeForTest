@@ -10,8 +10,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import i18next from 'i18next';
-import { Brand } from '../../atoms';
-import { useTheme } from '../../../hooks';
+import { Brand } from '../../components/atoms';
+import { useTheme } from '../../hooks';
 
 export const ExampleTemplate = ({
   onChangeTheme,
@@ -222,7 +222,7 @@ export const ExampleTemplate = ({
         <View>
           <TouchableOpacity
             style={[Common.button.circle, Gutters.regularBMargin]}
-            onPress={() => navigation.navigate('Camera')}
+            onPress={() => navigation.navigate('Topic')}
           >
             <Image
               source={Images.icons.colors}

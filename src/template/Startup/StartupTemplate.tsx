@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { Brand } from '../../atoms';
-import { useTheme } from '../../../hooks';
+import { Brand } from '../../components/atoms';
+import { useTheme } from '../../hooks';
 
 export const StartupTemplate = memo(() => {
   const { Layout, Gutters } = useTheme();
