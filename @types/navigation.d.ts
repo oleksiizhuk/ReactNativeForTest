@@ -12,6 +12,8 @@ export type ApplicationStackParamList = {
   Topic: undefined;
   AnimationTopic: undefined;
   AnimatedAPIScreen: undefined;
+  LayoutAnimationScreen: undefined;
+  ReanimatedScreen: undefined;
 };
 
 export type ApplicationScreenProps =

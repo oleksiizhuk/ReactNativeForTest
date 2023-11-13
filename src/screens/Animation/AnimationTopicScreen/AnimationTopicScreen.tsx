@@ -11,11 +11,11 @@ export const AnimationTopicScreen = memo(() => {
   }, [navigation]);
 
   const navigateToLayoutAnimation = useCallback(() => {
-    return navigation.navigate('LayoutAnimation');
+    return navigation.navigate('LayoutAnimationScreen');
   }, [navigation]);
 
   const navigateToReanimated = useCallback(() => {
-    return navigation.navigate('Reanimated');
+    return navigation.navigate('ReanimatedScreen');
   }, [navigation]);
 
   return (
@@ -34,7 +34,7 @@ export const AnimationTopicScreen = memo(() => {
         styleContainer={styles.buttonContainer}
       />
       <Button
-        text={'Reanimated'}
+        text={'ReanimatedScreen'}
         onPress={navigateToReanimated}
         styleContainer={styles.buttonContainer}
       />

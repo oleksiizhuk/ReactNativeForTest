@@ -12,6 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import i18next from 'i18next';
 import { Brand } from '../../components/atoms';
 import { useTheme } from '../../hooks';
+import { ExampleStyles } from './styles';
 
 export const ExampleTemplate = ({
   onChangeTheme,
@@ -21,6 +22,8 @@ export const ExampleTemplate = ({
   isLoading,
 }: any) => {
   const navigation = useNavigation<any>();
+
+  /*@ts-ignore*/
   const { t } = useTranslation(['example', 'welcome']);
   const {
     Common,
@@ -30,6 +33,8 @@ export const ExampleTemplate = ({
     Images,
     darkMode: isDark,
   } = useTheme();
+
+  const styles = ExampleStyles();
 
   return (
     <ScrollView
@@ -50,17 +55,7 @@ export const ExampleTemplate = ({
           Layout.alignItemsCenter,
         ]}
       >
-        <View
-          style={[
-            Layout.absolute,
-            {
-              height: 250,
-              width: 250,
-              backgroundColor: isDark ? '#000000' : '#DFDFDF',
-              borderRadius: 140,
-            },
-          ]}
-        />
+        <View style={[Layout.absolute, styles.absolute]} />
         <Image
           style={[
             Layout.absolute,
@@ -163,13 +158,16 @@ export const ExampleTemplate = ({
         ]}
       >
         <View>
+          {/*@ts-ignore*/}
           <Text style={[Fonts.titleRegular]}>{t('welcome:title')}</Text>
           <Text
             style={[Fonts.textBold, Fonts.textRegular, Gutters.regularBMargin]}
           >
+            {/*@ts-ignore*/}
             {t('welcome:subtitle')}
           </Text>
           <Text style={[Fonts.textSmall, Fonts.textLight]}>
+            {/*@ts-ignore*/}
             {t('welcome:description')}
           </Text>
         </View>
@@ -189,10 +187,7 @@ export const ExampleTemplate = ({
             {isFetching || isLoading ? (
               <ActivityIndicator />
             ) : (
-              <Image
-                source={Images.icons.send}
-                style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
-              />
+              <Image source={Images.icons.send} style={styles.iconBackground} />
             )}
           </TouchableOpacity>
 
@@ -200,10 +195,7 @@ export const ExampleTemplate = ({
             style={[Common.button.circle, Gutters.regularBMargin]}
             onPress={() => onChangeTheme({ darkMode: !isDark })}
           >
-            <Image
-              source={Images.icons.colors}
-              style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
-            />
+            <Image source={Images.icons.colors} style={styles.iconBackground} />
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -214,7 +206,7 @@ export const ExampleTemplate = ({
           >
             <Image
               source={Images.icons.translate}
-              style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
+              style={styles.iconBackground}
             />
           </TouchableOpacity>
         </View>
@@ -224,10 +216,7 @@ export const ExampleTemplate = ({
             style={[Common.button.circle, Gutters.regularBMargin]}
             onPress={() => navigation.navigate('Topic')}
           >
-            <Image
-              source={Images.icons.colors}
-              style={{ tintColor: isDark ? '#A6A4F0' : '#44427D' }}
-            />
+            <Image source={Images.icons.colors} style={styles.iconBackground} />
           </TouchableOpacity>
         </View>
       </View>

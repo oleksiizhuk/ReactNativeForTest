@@ -13,6 +13,8 @@ import { MainNavigator } from './Main';
 import { AnimationTopicScreen } from '../screens/Animation/AnimationTopicScreen/AnimationTopicScreen';
 import { AnimatedAPIScreen } from '../screens/Animation/AnimatedAPI/AnimatedAPIScreen';
 import { ApplicationStackParamList } from '../../@types/navigation';
+import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/ReanimatedScreen';
+import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -41,6 +43,11 @@ export const ApplicationNavigator = () => {
             name="AnimatedAPIScreen"
             component={AnimatedAPIScreen}
           />
+          <Stack.Screen
+            name="LayoutAnimationScreen"
+            component={LayoutAnimationScreen}
+          />
+          <Stack.Screen name="ReanimatedScreen" component={ReanimatedScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
