@@ -18,6 +18,7 @@ export type ApplicationStackParamList = {
   UseDeferredValueScreen: undefined;
   UseTransitionScreen: undefined;
   UseIDScreen: undefined;
+  LazyScreen: undefined;
 };
 
 export type ApplicationScreenProps =

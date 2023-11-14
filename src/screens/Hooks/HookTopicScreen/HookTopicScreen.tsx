@@ -19,22 +19,31 @@ export const HookTopicScreen = memo(() => {
     return navigation.navigate('UseIDScreen');
   }, [navigation]);
 
+  const navigateToLazyScreen = useCallback(() => {
+    return navigation.navigate('LazyScreen');
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'React Hooks'} />
       <Button
-        text={'UseDeferredValueScreen'}
+        text={'UseDeferredValue'}
         onPress={navigateToUseDeferredValueScreen}
         styleContainer={styles.buttonContainer}
       />
       <Button
-        text={'UseTransitionScreen'}
+        text={'UseTransition'}
         onPress={navigateToUseTransitionScreen}
         styleContainer={styles.buttonContainer}
       />
       <Button
         text={'UseId'}
         onPress={navigateToUseIDScreen}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'Lazy'}
+        onPress={navigateToLazyScreen}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>

@@ -19,6 +19,7 @@ import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/
 import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen';
 import { UseTransitionScreen } from '../screens/Hooks/UseTransitionScreen/useTransition';
 import { UseIDScreen } from '../screens/Hooks/UseIDScreen/useID';
+import { LazyScreen } from '../screens/Hooks/LazyScreen/LazyScreen';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -62,6 +63,7 @@ export const ApplicationNavigator = () => {
             component={UseTransitionScreen}
           />
           <Stack.Screen name="UseIDScreen" component={UseIDScreen} />
+          <Stack.Screen name="LazyScreen" component={LazyScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
