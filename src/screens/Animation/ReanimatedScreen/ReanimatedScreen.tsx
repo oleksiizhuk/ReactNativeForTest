@@ -1,11 +1,12 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { DraggableBox } from './Component/DraggableBox';
+import { Title } from '../../../components/atoms/Title/Title';
 
 export const ReanimatedScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      <Text>DraggableBox</Text>
+      <Title title={'DraggableBox'} />
       <DraggableBox>
         <View style={styles.containerDraggableBox}>
           <Text style={styles.text}>DraggableBox</Text>

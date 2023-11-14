@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from '../../../components/atoms/Button/Button';
+import { Title } from '../../../components/atoms/Title/Title';
 
 export const HookTopicScreen = memo(() => {
   const navigation = useNavigation<any>();
@@ -16,9 +17,8 @@ export const HookTopicScreen = memo(() => {
 
   return (
     <ScrollView style={styles.container}>
-      <View>
-        <Text>React Hooks</Text>
-      </View>
+      <Title title={'React Hooks'} />
+
       <Button
         text={'UseDeferredValueScreen'}
         onPress={navigateToUseDeferredValueScreen}

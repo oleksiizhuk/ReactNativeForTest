@@ -1,7 +1,8 @@
 import React, { memo, useCallback } from 'react';
-import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from '../../../components/atoms/Button/Button';
+import { Title } from '../../../components/atoms/Title/Title';
 
 export const AnimationTopicScreen = memo(() => {
   const navigation = useNavigation<any>();
@@ -20,9 +21,7 @@ export const AnimationTopicScreen = memo(() => {
 
   return (
     <ScrollView style={styles.container}>
-      <View>
-        <Text>Animation</Text>
-      </View>
+      <Title title={'Animation'} />
       <Button
         text={'Animated API'}
         onPress={navigateToAnimatedAPI}
