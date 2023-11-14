@@ -1,23 +1,58 @@
-import React, { memo, useState, useDeferredValue, useMemo } from 'react';
+import React, {
+  memo,
+  useState,
+  useDeferredValue,
+  useMemo,
+  useCallback,
+} from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { City } from '../../../constant/city';
 import { Input } from '../../../components/atoms/Input/Input';
+import { CheckBox } from '../../../components/atoms/CheckBox/CheckBox';
 
 export const UseDeferredValueScreen = memo(() => {
+  const [isChecked, setIsChecked] = useState(true);
+  const [isFilterCity, setIsFilterCity] = useState(true);
+
+  const toggleCheckBox = useCallback(() => {
+    setIsChecked(!isChecked);
+  }, [isChecked]);
+
+  const toggleIsFilterCityCheckBox = useCallback(() => {
+    setIsFilterCity(!isFilterCity);
+  }, [isFilterCity]);
+
   const [inputValue, setInputValue] = useState('');
+
   const deferredInputValue = useDeferredValue(inputValue);
 
+  const finalValue = useMemo(() => {
+    return isChecked ? deferredInputValue : inputValue;
+  }, [deferredInputValue, inputValue, isChecked]);
+
   const filteredItems = useMemo(() => {
-    return someHeavyFilterFunction(deferredInputValue);
-  }, [deferredInputValue]);
+    return someHeavyFilterFunction(finalValue, isFilterCity);
+  }, [finalValue, isFilterCity]);
 
   return (
     <ScrollView style={styles.container}>
+      <View>
+        <CheckBox
+          isChecked={isChecked}
+          toggleCheckBox={toggleCheckBox}
+          label={'useDeferredValue'}
+        />
+        <CheckBox
+          isChecked={isFilterCity}
+          toggleCheckBox={toggleIsFilterCityCheckBox}
+          label={'Filter city'}
+        />
+      </View>
       <Input value={inputValue} onChangeText={setInputValue} />
       {filteredItems.map((item, index) => (
-        <View>
-          <Text key={index}>
-            {item} {deferredInputValue}
+        <View key={index}>
+          <Text>
+            {item} {finalValue}
           </Text>
         </View>
       ))}
@@ -31,6 +66,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const someHeavyFilterFunction = (name: string) => {
-  return City.filter(item => item.includes(name));
+const someHeavyFilterFunction = (name: string, withFilter: boolean) => {
+  return withFilter ? City.filter(item => item.includes(name)) : City;
 };
