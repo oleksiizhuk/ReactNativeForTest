@@ -1,31 +1,24 @@
-import React, {
-  memo,
-  useCallback,
-  useMemo,
-  useState,
-  useTransition,
-} from 'react';
+import React, { memo, useCallback, useState, useTransition } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Input } from '../../../components/atoms/Input/Input';
 import { City } from '../../../constant/city';
 
+// dont work
 export const UseTransitionScreen = memo(() => {
   const [inputValue, setInputValue] = useState<string>('');
-  const [, setFilteredValue] = useState<string>('');
-  const [items] = useState<string[]>([...City, ...City]);
+  const [filteredItems, setFilteredItems] = useState<string[]>([]);
   const [isPending, startTransition] = useTransition();
-  console.log('isPending  = ', isPending);
 
   const handleChange = useCallback((newInputValue: string) => {
     setInputValue(newInputValue);
     startTransition(() => {
-      setFilteredValue(newInputValue);
+      // Perform filtering inside the transition
+      const newFilteredItems = City.filter(item =>
+        item.includes(newInputValue),
+      );
+      setFilteredItems(newFilteredItems);
     });
   }, []);
-
-  const filteredItems = useMemo(() => {
-    return items.filter(item => item.includes(inputValue));
-  }, [inputValue, items]);
 
   return (
     <View style={styles.container}>
@@ -34,12 +27,10 @@ export const UseTransitionScreen = memo(() => {
         onChangeText={handleChange}
         placeholder="Type here..."
       />
-      {isPending && <Text>isLoading</Text>}
-      {filteredItems.map((item: string, index: number) => (
+      {isPending && <Text>Loading...</Text>}
+      {filteredItems.map((item, index) => (
         <View key={index}>
-          <Text>
-            {item} {inputValue}
-          </Text>
+          <Text>{item}</Text>
         </View>
       ))}
     </View>
@@ -50,5 +41,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 16,
-  },
-});
+  }
+})
