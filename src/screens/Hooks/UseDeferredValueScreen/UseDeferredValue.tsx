@@ -40,13 +40,14 @@ export const UseDeferredValueScreen = memo(() => {
         <CheckBox
           isChecked={isChecked}
           toggleCheckBox={toggleCheckBox}
-          label={'useDeferredValue'}
+          label={`useDeferredValue: ${isChecked}`}
         />
         <CheckBox
           isChecked={isFilterCity}
           toggleCheckBox={toggleIsFilterCityCheckBox}
-          label={'Filter city'}
+          label={`Filter city: ${isFilterCity}`}
         />
+        <Text>filteredItems length: ${filteredItems.length}</Text>
       </View>
       <Input value={inputValue} onChangeText={setInputValue} />
       {filteredItems.map((item, index) => (

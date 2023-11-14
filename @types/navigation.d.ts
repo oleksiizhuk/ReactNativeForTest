@@ -16,6 +16,7 @@ export type ApplicationStackParamList = {
   ReanimatedScreen: undefined;
   HookTopicScreen: undefined;
   UseDeferredValueScreen: undefined;
+  UseTransitionScreen: undefined;
 };
 
 export type ApplicationScreenProps =

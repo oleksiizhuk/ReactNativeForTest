@@ -17,6 +17,7 @@ import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/Reanimat
 import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen';
 import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue';
 import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen';
+import { UseTransitionScreen } from '../screens/Hooks/useTransition/useTransition';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -54,6 +55,10 @@ export const ApplicationNavigator = () => {
           <Stack.Screen
             name="UseDeferredValueScreen"
             component={UseDeferredValueScreen}
+          />
+          <Stack.Screen
+            name="UseTransitionScreen"
+            component={UseTransitionScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

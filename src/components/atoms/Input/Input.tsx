@@ -1,50 +1,88 @@
-import React, { memo } from 'react';
+import React, { memo, forwardRef } from 'react';
 import { TextInput, View, StyleSheet, Text } from 'react-native';
 
 interface InputProps {
   value: string;
   label?: string;
   error?: string;
+  placeholder?: string;
   onChangeText: (text: string) => void;
+  inputStyle?: object;
+  containerStyle?: object;
+  errorTextStyle?: object;
+  keyboardType?: 'default' | 'numeric' | 'email-address' | 'phone-pad';
 }
-export const Input = memo<InputProps>(
-  ({ value, onChangeText, label, error }) => {
-    return (
-      <View>
-        {label ? (
-          <View style={styles.labelContainer}>
-            <Text style={styles.labelText}>{label}</Text>
+
+export const Input = memo(
+  forwardRef<TextInput, InputProps>(
+    (
+      {
+        value,
+        onChangeText,
+        label,
+        error,
+        placeholder,
+        inputStyle,
+        containerStyle,
+        errorTextStyle,
+        keyboardType = 'default',
+      },
+      ref,
+    ) => {
+      return (
+        <View style={[styles.container, containerStyle]}>
+          {label && (
+            <View style={styles.labelContainer}>
+              <Text style={styles.labelText}>{label}</Text>
+            </View>
+          )}
+          <View style={styles.inputContainer}>
+            <TextInput
+              placeholder={placeholder}
+              value={value}
+              onChangeText={onChangeText}
+              style={[styles.input, inputStyle]}
+              keyboardType={keyboardType}
+              ref={ref}
+            />
           </View>
-        ) : null}
-        <View style={styles.inputContainer}>
-          <TextInput
-            value={value}
-            onChangeText={onChangeText}
-            style={styles.input}
-          />
+          {error && (
+            <View>
+              <Text style={[styles.errorText, errorTextStyle]}>{error}</Text>
+            </View>
+          )}
         </View>
-        {error ? (
-          <View>
-            <Text style={styles.errorText}>{error}</Text>
-          </View>
-        ) : null}
-      </View>
-    );
-  },
+      );
+    },
+  ),
 );
 
 const styles = StyleSheet.create({
-  labelContainer: {},
-  labelText: {},
+  container: {
+    marginVertical: 5,
+  },
+  labelContainer: {
+    marginBottom: 5,
+  },
+  labelText: {
+    fontSize: 16,
+    color: '#333',
+    fontWeight: 'bold',
+  },
   inputContainer: {
-    borderWidth: 1,
-    borderColor: 'blue',
-    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: '#2860b4',
+    borderRadius: 8,
+    backgroundColor: '#fff',
   },
   input: {
     padding: 12,
+    fontSize: 14,
+    color: '#333',
   },
   errorText: {
-    color: 'red',
+    color: '#ff0000',
+    fontSize: 12,
+    marginTop: 5,
   },
 });

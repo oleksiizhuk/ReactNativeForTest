@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { TouchableOpacity, Text, StyleSheet, ViewStyle } from 'react-native';
 
-enum ButtonType {
+export enum ButtonType {
   Small = 'small',
   Default = 'default',
 }
@@ -28,29 +28,47 @@ export const Button = memo<ButtonProps>(
 const styles = StyleSheet.create({
   [`${ButtonType.Default}Container`]: {
     borderWidth: 1,
-    borderColor: 'red',
+    borderColor: '#004aad',
+    backgroundColor: '#ffffff',
     padding: 20,
     alignItems: 'center',
-    borderRadius: 24,
+    borderRadius: 30,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   [`${ButtonType.Small}Container`]: {
     borderWidth: 1,
-    borderColor: 'red',
+    borderColor: '#004aad',
+    backgroundColor: '#ffffff',
     padding: 12,
     alignItems: 'center',
-    borderRadius: 24,
+    borderRadius: 30,
     width: 140,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   [`${ButtonType.Default}Text`]: {
     fontSize: 18,
     lineHeight: 22,
-    color: 'blue',
-    textAlign: 'left',
+    color: '#004aad',
+    textAlign: 'center',
   },
   [`${ButtonType.Small}Text`]: {
-    fontSize: 14,
-    lineHeight: 18,
-    color: 'blue',
-    textAlign: 'left',
+    fontSize: 16,
+    lineHeight: 20,
+    color: '#004aad',
+    textAlign: 'center',
   },
 });

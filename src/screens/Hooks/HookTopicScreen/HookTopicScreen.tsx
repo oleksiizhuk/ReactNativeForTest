@@ -6,8 +6,12 @@ import { Button } from '../../../components/atoms/Button/Button';
 export const HookTopicScreen = memo(() => {
   const navigation = useNavigation<any>();
 
-  const navigateToAnimatedAPI = useCallback(() => {
+  const navigateToUseDeferredValueScreen = useCallback(() => {
     return navigation.navigate('UseDeferredValueScreen');
+  }, [navigation]);
+
+  const navigateToUseTransitionScreen = useCallback(() => {
+    return navigation.navigate('UseTransitionScreen');
   }, [navigation]);
 
   return (
@@ -17,7 +21,12 @@ export const HookTopicScreen = memo(() => {
       </View>
       <Button
         text={'UseDeferredValueScreen'}
-        onPress={navigateToAnimatedAPI}
+        onPress={navigateToUseDeferredValueScreen}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'UseTransitionScreen'}
+        onPress={navigateToUseTransitionScreen}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
