@@ -19,6 +19,8 @@ export type ApplicationStackParamList = {
   UseTransitionScreen: undefined;
   UseIDScreen: undefined;
   LazyScreen: undefined;
+  JSTopicScreen: undefined;
+  JSAsynkScreen: undefined;
 };
 
 export type ApplicationScreenProps =

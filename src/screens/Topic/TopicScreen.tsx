@@ -15,6 +15,10 @@ export const TopicScreen = memo(() => {
     return navigation.navigate('HookTopicScreen');
   }, [navigation]);
 
+  const navigateToJS = useCallback(() => {
+    return navigation.navigate('JSTopicScreen');
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'Topics'} />
@@ -26,6 +30,11 @@ export const TopicScreen = memo(() => {
       <Button
         text={'Hook Topic'}
         onPress={navigateToHook}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'JS Topic'}
+        onPress={navigateToJS}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
