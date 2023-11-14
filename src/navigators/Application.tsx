@@ -15,6 +15,8 @@ import { AnimatedAPIScreen } from '../screens/Animation/AnimatedAPI/AnimatedAPIS
 import { ApplicationStackParamList } from '../../@types/navigation';
 import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/ReanimatedScreen';
 import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen';
+import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue';
+import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -36,7 +38,7 @@ export const ApplicationNavigator = () => {
           <Stack.Screen name="Camera" component={CameraScreen} />
           <Stack.Screen name="Topic" component={TopicScreen} />
           <Stack.Screen
-            name="AnimationTopic"
+            name="AnimationTopicScreen"
             component={AnimationTopicScreen}
           />
           <Stack.Screen
@@ -48,6 +50,11 @@ export const ApplicationNavigator = () => {
             component={LayoutAnimationScreen}
           />
           <Stack.Screen name="ReanimatedScreen" component={ReanimatedScreen} />
+          <Stack.Screen name="HookTopicScreen" component={HookTopicScreen} />
+          <Stack.Screen
+            name="UseDeferredValueScreen"
+            component={UseDeferredValueScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
