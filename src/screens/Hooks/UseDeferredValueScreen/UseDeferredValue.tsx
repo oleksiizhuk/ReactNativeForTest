@@ -10,6 +10,7 @@ import { City } from '../../../constant/city';
 import { Input } from '../../../components/atoms/Input/Input';
 import { CheckBox } from '../../../components/atoms/CheckBox/CheckBox';
 
+// Debounce
 export const UseDeferredValueScreen = memo(() => {
   const [isChecked, setIsChecked] = useState(true);
   const [isFilterCity, setIsFilterCity] = useState(true);

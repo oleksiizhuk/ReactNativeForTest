@@ -17,7 +17,8 @@ import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/Reanimat
 import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen';
 import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue';
 import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen';
-import { UseTransitionScreen } from '../screens/Hooks/useTransition/useTransition';
+import { UseTransitionScreen } from '../screens/Hooks/UseTransitionScreen/useTransition';
+import { UseIDScreen } from '../screens/Hooks/UseIDScreen/useID';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -60,6 +61,7 @@ export const ApplicationNavigator = () => {
             name="UseTransitionScreen"
             component={UseTransitionScreen}
           />
+          <Stack.Screen name="UseIDScreen" component={UseIDScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

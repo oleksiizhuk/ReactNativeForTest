@@ -17,6 +17,7 @@ export type ApplicationStackParamList = {
   HookTopicScreen: undefined;
   UseDeferredValueScreen: undefined;
   UseTransitionScreen: undefined;
+  UseIDScreen: undefined;
 };
 
 export type ApplicationScreenProps =
