@@ -22,6 +22,7 @@ import { UseIDScreen } from '../screens/Hooks/UseIDScreen/useID';
 import { LazyScreen } from '../screens/Hooks/LazyScreen/LazyScreen';
 import { JSTopicScreen } from '../screens/JS/JSTopicScreen/JSTopicScreen';
 import { JSAsynkScreen } from '../screens/JS/JSAsynkScreen/JSAsynkScreen';
+import { JSHTMLTreeScreen } from '../screens/JS/JSHTMLTreeScreen/JSHTMLTreeScreen';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -68,6 +69,7 @@ export const ApplicationNavigator = () => {
           <Stack.Screen name="LazyScreen" component={LazyScreen} />
           <Stack.Screen name="JSTopicScreen" component={JSTopicScreen} />
           <Stack.Screen name="JSAsynkScreen" component={JSAsynkScreen} />
+          <Stack.Screen name="JSHTMLTreeScreen" component={JSHTMLTreeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

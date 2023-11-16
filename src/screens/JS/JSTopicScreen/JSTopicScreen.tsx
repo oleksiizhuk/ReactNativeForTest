@@ -11,12 +11,21 @@ export const JSTopicScreen = memo(() => {
     return navigation.navigate('JSAsynkScreen');
   }, [navigation]);
 
+  const navigateToJSHTMLTreeScreen = useCallback(() => {
+    return navigation.navigate('JSHTMLTreeScreen');
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'JS'} />
       <Button
         text={'JS Asynk'}
         onPress={navigateToAnimatedAPI}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'JS HTMLTree'}
+        onPress={navigateToJSHTMLTreeScreen}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>

@@ -21,6 +21,7 @@ export type ApplicationStackParamList = {
   LazyScreen: undefined;
   JSTopicScreen: undefined;
   JSAsynkScreen: undefined;
+  JSHTMLTreeScreen: undefined;
 };
 
 export type ApplicationScreenProps =
