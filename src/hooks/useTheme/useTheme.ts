@@ -10,7 +10,7 @@ import {
   themes,
   DefaultVariables,
 } from '../../theme';
-import { ThemeState } from '../../store/theme';
+import { ThemeState } from '../../store/theme/types';
 import {
   ThemeVariables,
   Theme,
@@ -19,10 +19,8 @@ import {
 } from '../../../@types/theme';
 
 export default function () {
-  // Get the scheme device
   const colorScheme = useColorScheme();
 
-  // Get current theme from the storeSaga
   const currentTheme = useSelector(
     (state: { theme: ThemeState }) => state.theme.theme,
   );

@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { useLazyFetchOneQuery } from '../../../services/modules/users';
 import { Alert } from 'react-native';
-import { changeTheme, ThemeState } from '../../../store/theme';
 import i18next from 'i18next';
+import { useLazyFetchOneQuery } from '../../../services/modules/users';
+import { changeTheme } from '../../../store/theme';
+import { ThemeState } from '../../../store/theme/types';
 
 export const useExampleData = () => {
   const { t } = useTranslation(['example', 'welcome']);

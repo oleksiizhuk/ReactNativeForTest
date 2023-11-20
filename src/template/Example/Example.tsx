@@ -13,6 +13,15 @@ import i18next from 'i18next';
 import { Brand } from '../../components/atoms';
 import { useTheme } from '../../hooks';
 import { ExampleStyles } from './styles';
+import { ThemeState } from '../../store/theme/types';
+
+interface ExampleTemplateProps {
+  isFetching: boolean;
+  isLoading: boolean;
+  fetchOne: (something: string) => void;
+  onChangeTheme: ({ theme, darkMode }: Partial<ThemeState>) => void;
+  onChangeLanguage: (lang: 'fr' | 'en') => void;
+}
 
 export const ExampleTemplate = ({
   onChangeTheme,
@@ -20,7 +29,7 @@ export const ExampleTemplate = ({
   fetchOne,
   isFetching,
   isLoading,
-}: any) => {
+}: ExampleTemplateProps) => {
   const navigation = useNavigation<any>();
 
   /*@ts-ignore*/
