@@ -8,14 +8,7 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?react-native|@react-native|@react-native-community|@react-navigation)',
   ],
-  // collectCoverageFrom: [
-  //   '<rootDir>/src/Component/**/*.jsx',
-  //   '<rootDir>/src/App.jsx',
-  //   '<rootDir>/src/Component/**/*.tsx',
-  //   '<rootDir>/src/App.tsx',
-  // ],
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
-
   collectCoverage: true,
   coverageReporters: ['cobertura', 'lcov', 'html', 'text-summary'],
   testMatch: ['**/*.test.ts?(x)', '**/*.test.js?(x)'],
