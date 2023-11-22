@@ -1,2 +1,2 @@
-export * from './fetchDataSaga';
-export * from './fetchUser';
+export * from './fetchDataSaga'
+export * from './fetchUser'

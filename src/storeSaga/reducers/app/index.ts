@@ -1,2 +1,2 @@
-export * from '../../sagas/app/fetchUser';
-export * from './app';
+export * from '../../sagas/app/fetchUser'
+export * from './app'

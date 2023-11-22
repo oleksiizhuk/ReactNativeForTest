@@ -1,5 +1,5 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { setupListeners } from '@reduxjs/toolkit/query'
 import {
   persistReducer,
   persistStore,
@@ -10,64 +10,64 @@ import {
   PURGE,
   REGISTER,
   Storage,
-} from 'redux-persist';
-import { MMKV } from 'react-native-mmkv';
-import { api } from '../services/api';
-import theme from './reducers/theme';
-import auth from './reducers/auth';
-import todo from './reducers/todo';
+} from 'redux-persist'
+import { MMKV } from 'react-native-mmkv'
+import { api } from '../services/api'
+import theme from './reducers/theme'
+import auth from './reducers/auth'
+import todo from './reducers/todo'
 
 const reducers = combineReducers({
   theme,
   auth,
   todo,
   [api.reducerPath]: api.reducer,
-});
+})
 
-const storage = new MMKV();
+const storage = new MMKV()
 export const reduxStorage: Storage = {
   setItem: (key, value) => {
-    storage.set(key, value);
-    return Promise.resolve(true);
+    storage.set(key, value)
+    return Promise.resolve(true)
   },
-  getItem: key => {
-    const value = storage.getString(key);
-    return Promise.resolve(value);
+  getItem: (key) => {
+    const value = storage.getString(key)
+    return Promise.resolve(value)
   },
-  removeItem: key => {
-    storage.delete(key);
-    return Promise.resolve();
+  removeItem: (key) => {
+    storage.delete(key)
+    return Promise.resolve()
   },
-};
+}
 
 const persistConfig = {
   key: 'root',
   storage: reduxStorage,
   whitelist: ['theme', 'auth', 'todo'],
-};
+}
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, reducers)
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: getDefaultMiddleware => {
+  middleware: (getDefaultMiddleware) => {
     const middlewares = getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(api.middleware);
+    }).concat(api.middleware)
 
     if (__DEV__ && !process.env.JEST_WORKER_ID) {
-      const createDebugger = require('redux-flipper').default;
-      middlewares.push(createDebugger());
+      const createDebugger = require('redux-flipper').default
+      middlewares.push(createDebugger())
     }
 
-    return middlewares;
+    return middlewares
   },
-});
+})
 
-const persistor = persistStore(store);
+const persistor = persistStore(store)
 
-setupListeners(store.dispatch);
+setupListeners(store.dispatch)
 
-export { store, persistor };
+export { store, persistor }

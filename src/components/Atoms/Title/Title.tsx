@@ -1,12 +1,12 @@
-import React, { memo } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import React, { memo } from 'react'
+import { StyleSheet, Text } from 'react-native'
 
 interface TitleProps {
-  title: string;
+  title: string
 }
 export const Title = memo<TitleProps>(({ title }) => {
-  return <Text style={styles.text}>{title}</Text>;
-});
+  return <Text style={styles.text}>{title}</Text>
+})
 
 const styles = StyleSheet.create({
   text: {
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     textTransform: 'uppercase',
   },
-});
+})

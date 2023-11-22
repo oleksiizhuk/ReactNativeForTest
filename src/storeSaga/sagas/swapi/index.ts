@@ -1,1 +1,1 @@
-export * from './featchPeopleSaga';
+export * from './featchPeopleSaga'

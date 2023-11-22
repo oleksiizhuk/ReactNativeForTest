@@ -4,28 +4,28 @@ import React, {
   useMemo,
   useState,
   useTransition,
-} from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { Input } from '../../../components/Atoms/Input/Input';
-import { City } from '../../../constant/city';
+} from 'react'
+import { View, StyleSheet, Text } from 'react-native'
+import { Input } from '../../../components/Atoms/Input/Input'
+import { City } from '../../../constant/city'
 
 export const UseTransitionScreen = memo(() => {
-  const [inputValue, setInputValue] = useState<string>('');
-  const [, setFilteredValue] = useState<string>('');
-  const [items] = useState<string[]>([...City, ...City]);
-  const [isPending, startTransition] = useTransition();
-  console.log('isPending  = ', isPending);
+  const [inputValue, setInputValue] = useState<string>('')
+  const [, setFilteredValue] = useState<string>('')
+  const [items] = useState<string[]>([...City, ...City])
+  const [isPending, startTransition] = useTransition()
+  console.log('isPending  = ', isPending)
 
   const handleChange = useCallback((newInputValue: string) => {
-    setInputValue(newInputValue);
+    setInputValue(newInputValue)
     startTransition(() => {
-      setFilteredValue(newInputValue);
-    });
-  }, []);
+      setFilteredValue(newInputValue)
+    })
+  }, [])
 
   const filteredItems = useMemo(() => {
-    return items.filter(item => item.includes(inputValue));
-  }, [inputValue, items]);
+    return items.filter((item) => item.includes(inputValue))
+  }, [inputValue, items])
 
   return (
     <View style={styles.container}>
@@ -43,12 +43,12 @@ export const UseTransitionScreen = memo(() => {
         </View>
       ))}
     </View>
-  );
-});
+  )
+})
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 16,
   },
-});
+})

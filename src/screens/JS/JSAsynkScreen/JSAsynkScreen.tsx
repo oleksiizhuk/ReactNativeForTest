@@ -1,14 +1,14 @@
-import React, { memo } from 'react';
-import { ScrollView, StyleSheet, Text } from 'react-native';
+import React, { memo } from 'react'
+import { ScrollView, StyleSheet, Text } from 'react-native'
 
 export const JSAsynkScreen = memo(() => {
-  console.log('console.log');
+  console.log('console.log')
 
-  setTimeout(() => console.log('setTimeout'), 0);
+  setTimeout(() => console.log('setTimeout'), 0)
 
-  new Promise(res => {
-    res('');
-  }).then(() => console.log('Promise'));
+  new Promise((res) => {
+    res('')
+  }).then(() => console.log('Promise'))
 
   return (
     <ScrollView style={styles.container}>
@@ -16,12 +16,12 @@ export const JSAsynkScreen = memo(() => {
       <Text>Promise: 2</Text>
       <Text>setTimeout: 3</Text>
     </ScrollView>
-  );
-});
+  )
+})
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 16,
   },
-});
+})

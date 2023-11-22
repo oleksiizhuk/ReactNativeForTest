@@ -1,1 +1,1 @@
-export * from './useStartupScreen';
+export * from './useStartupScreen'

@@ -1,3 +1,3 @@
-import {sagas} from './sagas';
+import { sagas } from './sagas'
 
-export type StoreSagas = typeof sagas;
+export type StoreSagas = typeof sagas

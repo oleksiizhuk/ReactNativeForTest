@@ -1,27 +1,27 @@
-import React, { memo, useCallback } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { Button } from '../../components/Atoms/Button/Button';
-import { useNavigation } from '@react-navigation/native';
-import { Title } from '../../components/Atoms/Title/Title';
+import React, { memo, useCallback } from 'react'
+import { ScrollView, StyleSheet } from 'react-native'
+import { Button } from '../../components/Atoms/Button/Button'
+import { useNavigation } from '@react-navigation/native'
+import { Title } from '../../components/Atoms/Title/Title'
 
 export const TopicScreen = memo(() => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>()
 
   const navigateToAnimation = useCallback(() => {
-    return navigation.navigate('AnimationTopicScreen');
-  }, [navigation]);
+    return navigation.navigate('AnimationTopicScreen')
+  }, [navigation])
 
   const navigateToHook = useCallback(() => {
-    return navigation.navigate('HookTopicScreen');
-  }, [navigation]);
+    return navigation.navigate('HookTopicScreen')
+  }, [navigation])
 
   const navigateToJS = useCallback(() => {
-    return navigation.navigate('JSTopicScreen');
-  }, [navigation]);
+    return navigation.navigate('JSTopicScreen')
+  }, [navigation])
 
   const navigateToTodo = useCallback(() => {
-    return navigation.navigate('TodoScreen');
-  }, [navigation]);
+    return navigation.navigate('TodoScreen')
+  }, [navigation])
   return (
     <ScrollView style={styles.container}>
       <Title title={'Topics'} />
@@ -46,8 +46,8 @@ export const TopicScreen = memo(() => {
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
-  );
-});
+  )
+})
 
 const styles = StyleSheet.create({
   container: {
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginBottom: 16,
   },
-});
+})

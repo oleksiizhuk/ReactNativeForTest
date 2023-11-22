@@ -1,27 +1,27 @@
-import React, { memo, useCallback } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Button } from '../../../components/Atoms/Button/Button';
-import { Title } from '../../../components/Atoms/Title/Title';
+import React, { memo, useCallback } from 'react'
+import { ScrollView, StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Button } from '../../../components/Atoms/Button/Button'
+import { Title } from '../../../components/Atoms/Title/Title'
 
 export const HookTopicScreen = memo(() => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>()
 
   const navigateToUseDeferredValueScreen = useCallback(() => {
-    return navigation.navigate('UseDeferredValueScreen');
-  }, [navigation]);
+    return navigation.navigate('UseDeferredValueScreen')
+  }, [navigation])
 
   const navigateToUseTransitionScreen = useCallback(() => {
-    return navigation.navigate('UseTransitionScreen');
-  }, [navigation]);
+    return navigation.navigate('UseTransitionScreen')
+  }, [navigation])
 
   const navigateToUseIDScreen = useCallback(() => {
-    return navigation.navigate('UseIDScreen');
-  }, [navigation]);
+    return navigation.navigate('UseIDScreen')
+  }, [navigation])
 
   const navigateToLazyScreen = useCallback(() => {
-    return navigation.navigate('LazyScreen');
-  }, [navigation]);
+    return navigation.navigate('LazyScreen')
+  }, [navigation])
 
   return (
     <ScrollView style={styles.container}>
@@ -47,8 +47,8 @@ export const HookTopicScreen = memo(() => {
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
-  );
-});
+  )
+})
 
 const styles = StyleSheet.create({
   container: {
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginBottom: 16,
   },
-});
+})

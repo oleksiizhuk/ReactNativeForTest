@@ -1,19 +1,19 @@
-import React, { memo, useCallback } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Button } from '../../../components/Atoms/Button/Button';
-import { Title } from '../../../components/Atoms/Title/Title';
+import React, { memo, useCallback } from 'react'
+import { ScrollView, StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Button } from '../../../components/Atoms/Button/Button'
+import { Title } from '../../../components/Atoms/Title/Title'
 
 export const JSTopicScreen = memo(() => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>()
 
   const navigateToAnimatedAPI = useCallback(() => {
-    return navigation.navigate('JSAsynkScreen');
-  }, [navigation]);
+    return navigation.navigate('JSAsynkScreen')
+  }, [navigation])
 
   const navigateToJSHTMLTreeScreen = useCallback(() => {
-    return navigation.navigate('JSHTMLTreeScreen');
-  }, [navigation]);
+    return navigation.navigate('JSHTMLTreeScreen')
+  }, [navigation])
 
   return (
     <ScrollView style={styles.container}>
@@ -29,8 +29,8 @@ export const JSTopicScreen = memo(() => {
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
-  );
-});
+  )
+})
 
 const styles = StyleSheet.create({
   container: {
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginBottom: 16,
   },
-});
+})

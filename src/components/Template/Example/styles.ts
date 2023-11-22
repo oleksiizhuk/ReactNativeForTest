@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native';
-import { useTheme } from '../../../hooks';
+import { StyleSheet } from 'react-native'
+import { useTheme } from '../../../hooks'
 
 export const ExampleStyles = () => {
-  const { darkMode: isDark } = useTheme();
+  const { darkMode: isDark } = useTheme()
   return StyleSheet.create({
     absolute: {
       height: 250,
@@ -13,5 +13,5 @@ export const ExampleStyles = () => {
     iconBackground: {
       tintColor: isDark ? '#A6A4F0' : '#44427D',
     },
-  });
-};
+  })
+}

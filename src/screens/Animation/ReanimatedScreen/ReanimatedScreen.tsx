@@ -1,7 +1,7 @@
-import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { DraggableBox } from './Component/DraggableBox';
-import { Title } from '../../../components/Atoms/Title/Title';
+import React from 'react'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { DraggableBox } from './Component/DraggableBox'
+import { Title } from '../../../components/Atoms/Title/Title'
 
 export const ReanimatedScreen = () => {
   return (
@@ -19,8 +19,8 @@ export const ReanimatedScreen = () => {
         </View>
       </DraggableBox>
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     color: 'red',
   },
-});
+})

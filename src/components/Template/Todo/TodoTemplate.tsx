@@ -1,9 +1,9 @@
-import React, { memo, useCallback } from 'react';
-import { View, FlatList, ListRenderItemInfo } from 'react-native';
-import { TodoItem } from '../../Molecules/TodoItem/TodoItem';
-import { TodoTemplateProps, TodoItemType } from './types';
-import { styles } from './styles';
-import { TodoHeader } from '../../Molecules/TodoHeader/TodoHeader';
+import React, { memo, useCallback } from 'react'
+import { View, FlatList, ListRenderItemInfo } from 'react-native'
+import { TodoItem } from '../../Molecules/TodoItem/TodoItem'
+import { TodoTemplateProps, TodoItemType } from './types'
+import { styles } from './styles'
+import { TodoHeader } from '../../Molecules/TodoHeader/TodoHeader'
 
 export const TodoTemplate = memo(
   ({
@@ -23,10 +23,10 @@ export const TodoTemplate = memo(
             onComplete={() => {}}
             onEdit={() => {}}
           />
-        );
+        )
       },
       [onDelete],
-    );
+    )
 
     return (
       <View style={styles.container}>
@@ -42,6 +42,6 @@ export const TodoTemplate = memo(
           renderItem={renderItem}
         />
       </View>
-    );
+    )
   },
-);
+)

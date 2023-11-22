@@ -16,4 +16,4 @@ module.exports = {
   ],
   coverageReporters: ['html', 'text', 'text-summary', 'cobertura'],
   testMatch: ['**/*.test.ts?(x)', '**/*.test.js?(x)'],
-};
+}

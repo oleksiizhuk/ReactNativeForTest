@@ -1,7 +1,7 @@
 // @ts-nocheck
 // @ts-ignore
-import React, { memo } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { memo } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
 /**
  * Expected result (string, no tabulations):
@@ -38,37 +38,35 @@ const tree = {
       ],
     },
   ],
-};
+}
 export const JSHTMLTreeScreen = memo(() => {
-  const render = inputTree => {
-    const array = [];
+  const render = (inputTree) => {
+    const array = []
     const generation = (node, arr) => {
-      const { children, name } = node;
+      const { children, name } = node
       if (Array.isArray(children)) {
-        arr.push(`<${name}>`);
+        arr.push(`<${name}>`)
         for (let i = 0; i < children.length; i++) {
-          generation(children[i], arr);
+          generation(children[i], arr)
         }
-        return arr.push(`</${name}>`);
+        return arr.push(`</${name}>`)
       } else if (typeof children === 'string') {
-        return arr.push(
-          `<${name}> ${children ? children : 'empty'} </${name}>`,
-        );
+        return arr.push(`<${name}> ${children ? children : 'empty'} </${name}>`)
       }
-    };
-    generation(inputTree, array);
-    return array;
-  };
+    }
+    generation(inputTree, array)
+    return array
+  }
 
-  const result = render(tree);
-  console.log('result = ', result);
+  const result = render(tree)
+  console.log('result = ', result)
   return (
     <View style={styles.container}>
       <Text>JSHTMLTree</Text>
     </View>
-  );
-});
+  )
+})
 
 const styles = StyleSheet.create({
   container: {},
-});
+})

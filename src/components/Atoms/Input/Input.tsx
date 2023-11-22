@@ -1,16 +1,16 @@
-import React, { memo, forwardRef } from 'react';
-import { TextInput, View, StyleSheet, Text } from 'react-native';
+import React, { memo, forwardRef } from 'react'
+import { TextInput, View, StyleSheet, Text } from 'react-native'
 
 interface InputProps {
-  value: string;
-  label?: string;
-  error?: string;
-  placeholder?: string;
-  onChangeText: (text: string) => void;
-  inputStyle?: object;
-  containerStyle?: object;
-  errorTextStyle?: object;
-  keyboardType?: 'default' | 'numeric' | 'email-address' | 'phone-pad';
+  value: string
+  label?: string
+  error?: string
+  placeholder?: string
+  onChangeText: (text: string) => void
+  inputStyle?: object
+  containerStyle?: object
+  errorTextStyle?: object
+  keyboardType?: 'default' | 'numeric' | 'email-address' | 'phone-pad'
 }
 
 export const Input = memo(
@@ -52,15 +52,15 @@ export const Input = memo(
             </View>
           )}
         </View>
-      );
+      )
     },
   ),
-);
+)
 
 const styles = StyleSheet.create({
   container: {
     marginVertical: 5,
-    flex: 1
+    flex: 1,
   },
   labelContainer: {
     marginBottom: 5,
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 5,
   },
-});
+})

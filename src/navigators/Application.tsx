@@ -1,39 +1,39 @@
-import React from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
-import { useFlipper } from '@react-navigation/devtools';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react'
+import { SafeAreaView, StatusBar } from 'react-native'
+import { useFlipper } from '@react-navigation/devtools'
+import { createStackNavigator } from '@react-navigation/stack'
 import {
   NavigationContainer,
   useNavigationContainerRef,
-} from '@react-navigation/native';
-import { StartupScreen, CameraScreen } from '../screens';
-import { TopicScreen } from '../screens/Topic/TopicScreen';
-import { useTheme } from '../hooks';
-import { MainNavigator } from './Main';
-import { AnimationTopicScreen } from '../screens/Animation/AnimationTopicScreen/AnimationTopicScreen';
-import { AnimatedAPIScreen } from '../screens/Animation/AnimatedAPI/AnimatedAPIScreen';
-import { ApplicationStackParamList } from '../../@types/navigation';
-import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/ReanimatedScreen';
-import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen';
-import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue';
-import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen';
-import { UseTransitionScreen } from '../screens/Hooks/UseTransitionScreen/useTransition';
-import { UseIDScreen } from '../screens/Hooks/UseIDScreen/useID';
-import { LazyScreen } from '../screens/Hooks/LazyScreen/LazyScreen';
-import { JSTopicScreen } from '../screens/JS/JSTopicScreen/JSTopicScreen';
-import { JSAsynkScreen } from '../screens/JS/JSAsynkScreen/JSAsynkScreen';
-import { JSHTMLTreeScreen } from '../screens/JS/JSHTMLTreeScreen/JSHTMLTreeScreen';
-import { TodoScreen } from '../screens/Todo/TodoScreen';
+} from '@react-navigation/native'
+import { StartupScreen, CameraScreen } from '../screens'
+import { TopicScreen } from '../screens/Topic/TopicScreen'
+import { useTheme } from '../hooks'
+import { MainNavigator } from './Main'
+import { AnimationTopicScreen } from '../screens/Animation/AnimationTopicScreen/AnimationTopicScreen'
+import { AnimatedAPIScreen } from '../screens/Animation/AnimatedAPI/AnimatedAPIScreen'
+import { ApplicationStackParamList } from '../../@types/navigation'
+import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/ReanimatedScreen'
+import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen'
+import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue'
+import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen'
+import { UseTransitionScreen } from '../screens/Hooks/UseTransitionScreen/useTransition'
+import { UseIDScreen } from '../screens/Hooks/UseIDScreen/useID'
+import { LazyScreen } from '../screens/Hooks/LazyScreen/LazyScreen'
+import { JSTopicScreen } from '../screens/JS/JSTopicScreen/JSTopicScreen'
+import { JSAsynkScreen } from '../screens/JS/JSAsynkScreen/JSAsynkScreen'
+import { JSHTMLTreeScreen } from '../screens/JS/JSHTMLTreeScreen/JSHTMLTreeScreen'
+import { TodoScreen } from '../screens/Todo/TodoScreen'
 
-const Stack = createStackNavigator<ApplicationStackParamList>();
+const Stack = createStackNavigator<ApplicationStackParamList>()
 
 export const ApplicationNavigator = () => {
-  const { Layout, darkMode, NavigationTheme } = useTheme();
-  const { colors } = NavigationTheme;
+  const { Layout, darkMode, NavigationTheme } = useTheme()
+  const { colors } = NavigationTheme
 
-  const navigationRef = useNavigationContainerRef();
+  const navigationRef = useNavigationContainerRef()
 
-  useFlipper(navigationRef);
+  useFlipper(navigationRef)
 
   return (
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
@@ -75,5 +75,5 @@ export const ApplicationNavigator = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
-  );
-};
+  )
+}

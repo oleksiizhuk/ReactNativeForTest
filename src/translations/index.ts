@@ -1,9 +1,9 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import * as resources from './resources';
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
+import * as resources from './resources'
 
-const ns = Object.keys(Object.values(resources)[0]);
-export const defaultNS = ns[0];
+const ns = Object.keys(Object.values(resources)[0])
+export const defaultNS = ns[0]
 
 i18n.use(initReactI18next).init({
   ns,
@@ -23,6 +23,6 @@ i18n.use(initReactI18next).init({
     escapeValue: false, // not needed for react as it escapes by default
   },
   compatibilityJSON: 'v3',
-});
+})
 
-export default i18n;
+export default i18n

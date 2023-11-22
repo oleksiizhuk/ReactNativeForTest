@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { ThemeVariables } from '../../@types/theme';
+import { StyleSheet } from 'react-native'
+import { ThemeVariables } from '../../@types/theme'
 
 export default function ({}: ThemeVariables) {
   return StyleSheet.create({
@@ -129,5 +129,5 @@ export default function ({}: ThemeVariables) {
     right0: {
       right: 0,
     },
-  });
+  })
 }

@@ -1,17 +1,24 @@
-import { Text, TouchableOpacity, View } from 'react-native';
-// import { RNCamera } from 'react-native-camera';
-import React, { memo } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { memo } from 'react'
 
-export const CameraTemplate = memo(({ setCamera, takePicture }: any) => {
+export const CameraTemplate = memo(({ takePicture }: any) => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {/*<RNCamera*/}
-      {/*  ref={(ref: any) => setCamera(ref)}*/}
-      {/*  style={{ width: 300, height: 400 }}*/}
-      {/*/>*/}
+    <View style={styles.container}>
       <TouchableOpacity onPress={takePicture}>
-        <Text style={{ fontSize: 20, marginTop: 20 }}>Take Picture</Text>
+        <Text style={styles.text}>Take Picture</Text>
       </TouchableOpacity>
     </View>
-  );
-});
+  )
+})
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+    marginTop: 20,
+  },
+})

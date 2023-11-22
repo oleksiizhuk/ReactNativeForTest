@@ -1,1 +1,1 @@
-export * from './CameraScreen';
+export * from './CameraScreen'

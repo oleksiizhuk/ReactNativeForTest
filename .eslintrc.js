@@ -16,4 +16,4 @@ module.exports = {
     'no-undef': 'off',
     semi: 'off',
   },
-};
+}

@@ -1,5 +1,5 @@
-import { Data } from '../../../components/Template/Todo/types';
+import { Data } from '../../../components/Template/Todo/types'
 
 export interface TodoState {
-  data: Data[];
+  data: Data[]
 }

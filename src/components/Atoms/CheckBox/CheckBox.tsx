@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { memo } from 'react'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 interface CheckBoxProps {
-  isChecked: boolean;
-  toggleCheckBox: () => void;
-  label?: string;
+  isChecked: boolean
+  toggleCheckBox: () => void
+  label?: string
 }
 
 export const CheckBox = memo<CheckBoxProps>(
@@ -13,9 +13,9 @@ export const CheckBox = memo<CheckBoxProps>(
         <View style={[styles.checkbox, isChecked && styles.checkedCheckbox]} />
         {label && <Text style={styles.label}>{label}</Text>}
       </TouchableOpacity>
-    );
+    )
   },
-);
+)
 
 const styles = StyleSheet.create({
   container: {
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
   },
-});
+})

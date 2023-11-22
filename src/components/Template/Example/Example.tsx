@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   View,
   ActivityIndicator,
@@ -6,21 +6,21 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
-} from 'react-native';
-import { useTranslation } from 'react-i18next';
-import { useNavigation } from '@react-navigation/native';
-import i18next from 'i18next';
-import { Brand } from '../../Atoms';
-import { useTheme } from '../../../hooks';
-import { ExampleStyles } from './styles';
-import { ThemeState } from '../../../store/reducers/theme/types';
+} from 'react-native'
+import { useTranslation } from 'react-i18next'
+import { useNavigation } from '@react-navigation/native'
+import i18next from 'i18next'
+import { Brand } from '../../Atoms'
+import { useTheme } from '../../../hooks'
+import { ExampleStyles } from './styles'
+import { ThemeState } from '../../../store/reducers/theme/types'
 
 interface ExampleTemplateProps {
-  isFetching: boolean;
-  isLoading: boolean;
-  fetchOne: (something: string) => void;
-  onChangeTheme: ({ theme, darkMode }: Partial<ThemeState>) => void;
-  onChangeLanguage: (lang: 'fr' | 'en') => void;
+  isFetching: boolean
+  isLoading: boolean
+  fetchOne: (something: string) => void
+  onChangeTheme: ({ theme, darkMode }: Partial<ThemeState>) => void
+  onChangeLanguage: (lang: 'fr' | 'en') => void
 }
 
 export const ExampleTemplate = ({
@@ -30,10 +30,10 @@ export const ExampleTemplate = ({
   isFetching,
   isLoading,
 }: ExampleTemplateProps) => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<any>()
 
   /*@ts-ignore*/
-  const { t } = useTranslation(['example', 'welcome']);
+  const { t } = useTranslation(['example', 'welcome'])
   const {
     Common,
     Fonts,
@@ -41,9 +41,9 @@ export const ExampleTemplate = ({
     Layout,
     Images,
     darkMode: isDark,
-  } = useTheme();
+  } = useTheme()
 
-  const styles = ExampleStyles();
+  const styles = ExampleStyles()
 
   return (
     <ScrollView
@@ -230,5 +230,5 @@ export const ExampleTemplate = ({
         </View>
       </View>
     </ScrollView>
-  );
-};
+  )
+}

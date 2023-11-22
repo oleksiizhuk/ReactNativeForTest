@@ -1,5 +1,1 @@
-
-
-export function *fetchDataSaga() {
-
-}
+export function* fetchDataSaga() {}

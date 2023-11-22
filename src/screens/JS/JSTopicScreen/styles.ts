@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 export const JSTopicScreenStyles = () => {
   return StyleSheet.create({
@@ -9,5 +9,5 @@ export const JSTopicScreenStyles = () => {
     buttonContainer: {
       marginBottom: 16,
     },
-  });
-};
+  })
+}
