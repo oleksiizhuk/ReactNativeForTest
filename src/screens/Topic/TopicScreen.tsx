@@ -8,7 +8,7 @@ export const TopicScreen = memo(() => {
   const navigation = useNavigation<any>();
 
   const navigateToAnimation = useCallback(() => {
-    return navigation.navigate('AnimationTopic');
+    return navigation.navigate('AnimationTopicScreen');
   }, [navigation]);
 
   const navigateToHook = useCallback(() => {

@@ -1,57 +1,35 @@
 import React, { memo, useCallback } from 'react';
-import { View, Text, FlatList, ListRenderItemInfo } from 'react-native';
-import { Input } from '../../Atoms/Input/Input';
-import { Button, ButtonType } from '../../Atoms/Button/Button';
+import { View, FlatList, ListRenderItemInfo } from 'react-native';
 import { TodoItem } from '../../Molecules/TodoItem/TodoItem';
-import { TodoTemplateProps, Data } from './types';
+import { TodoTemplateProps, TodoItemType } from './types';
 import { styles } from './styles';
+import { TodoHeader } from '../../Molecules/TodoHeader/TodoHeader';
 
-const fakeData = [
-  { id: 1, text: 'text 1' },
-  { id: 2, text: 'text 2' },
-];
-
-export const TodoTemplate = memo(({ data = fakeData }: TodoTemplateProps) => {
-  const header = useCallback(() => {
-    return (
-      <>
-        <View style={styles.header}>
-          <Input value={''} onChangeText={() => {}} />
-          <Button text={'Add Todo'} type={ButtonType.Small} />
-        </View>
-        <View>
-          <Text>Filter:</Text>
-        </View>
-        <View>
-          <Button text={'Undo'} type={ButtonType.Small} />
-          <Button text={'Redo'} type={ButtonType.Small} />
-        </View>
-      </>
+export const TodoTemplate = memo(
+  ({ todoListData, value, onChange }: TodoTemplateProps) => {
+    const renderItem = useCallback(
+      ({ item: { id, text } }: ListRenderItemInfo<TodoItemType>) => {
+        return (
+          <TodoItem
+            id={id}
+            text={text}
+            onDelete={() => {}}
+            onComplete={() => {}}
+            onEdit={() => {}}
+          />
+        );
+      },
+      [],
     );
-  }, []);
 
-  const renderItem = useCallback(
-    ({ item: { id, text } }: ListRenderItemInfo<Data>) => {
-      return (
-        <TodoItem
-          id={id}
-          text={text}
-          onDelete={() => {}}
-          onComplete={() => {}}
-          onEdit={() => {}}
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data={todoListData}
+          ListHeaderComponent={<TodoHeader value={value} onChange={onChange} />}
+          renderItem={renderItem}
         />
-      );
-    },
-    [],
-  );
-
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={data}
-        ListHeaderComponent={header}
-        renderItem={renderItem}
-      />
-    </View>
-  );
-});
+      </View>
+    );
+  },
+);

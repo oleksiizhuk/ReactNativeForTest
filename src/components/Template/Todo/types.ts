@@ -1,7 +1,9 @@
-export type Data = {
+export type TodoItemType = {
   id: number;
   text: string;
 };
 export interface TodoTemplateProps {
-  data?: Data[];
+  todoListData?: TodoItemType[];
+  value: string;
+  onChange: (text: string) => void;
 }
