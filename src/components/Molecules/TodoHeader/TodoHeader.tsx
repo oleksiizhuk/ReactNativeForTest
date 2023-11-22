@@ -1,13 +1,13 @@
-import React, { memo } from 'react';
-import { Text, View } from 'react-native';
-import { styles } from '../../Template/Todo/styles';
-import { Input } from '../../Atoms/Input/Input';
-import { Button, ButtonType } from '../../Atoms/Button/Button';
+import React, { memo } from 'react'
+import { Text, View } from 'react-native'
+import { styles } from '../../Template/Todo/styles'
+import { Input } from '../../Atoms/Input/Input'
+import { Button, ButtonType } from '../../Atoms/Button/Button'
 
 interface TodoHeaderProps {
-  value: string;
-  onChange: (value: string) => void;
-  addTodoItem: () => void;
+  value: string
+  onChange: (value: string) => void
+  addTodoItem: () => void
 }
 export const TodoHeader = memo<TodoHeaderProps>(
   ({ value, onChange, addTodoItem }) => {
@@ -30,6 +30,6 @@ export const TodoHeader = memo<TodoHeaderProps>(
           <Button text={'Redo'} type={ButtonType.Small} />
         </View>
       </>
-    );
+    )
   },
-);
+)

@@ -1,10 +1,10 @@
-import React from 'react';
-import { ExampleTemplate } from '../../components/Template';
-import { useExampleData } from './hooks/useExampleData';
+import React from 'react'
+import { ExampleTemplate } from '../../components/Template'
+import { useExampleData } from './hooks/useExampleData'
 
 export const ExampleScreen = () => {
   const { onChangeTheme, onChangeLanguage, fetchOne, isFetching, isLoading } =
-    useExampleData();
+    useExampleData()
 
   return (
     <ExampleTemplate
@@ -14,5 +14,5 @@ export const ExampleScreen = () => {
       isFetching={isFetching}
       isLoading={isLoading}
     />
-  );
-};
+  )
+}
