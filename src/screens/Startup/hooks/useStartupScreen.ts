@@ -1,4 +1,4 @@
-import { setDefaultTheme } from '../../../store/theme';
+import { setDefaultTheme } from '../../../store/reducers/theme';
 import { useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 

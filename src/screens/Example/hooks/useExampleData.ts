@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
 import i18next from 'i18next';
 import { useLazyFetchOneQuery } from '../../../services/modules/users';
-import { changeTheme } from '../../../store/theme';
-import { ThemeState } from '../../../store/theme/types';
+import { changeTheme } from '../../../store/reducers/theme';
+import { ThemeState } from '../../../store/reducers/theme/types';
 
 export const useExampleData = () => {
   const { t } = useTranslation(['example', 'welcome']);

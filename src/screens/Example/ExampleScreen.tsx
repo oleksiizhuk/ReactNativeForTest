@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExampleTemplate } from '../../template';
+import { ExampleTemplate } from '../../components/Template';
 import { useExampleData } from './hooks/useExampleData';
 
 export const ExampleScreen = () => {

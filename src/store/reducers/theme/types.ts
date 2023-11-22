@@ -1,4 +1,4 @@
-import themes from '../../theme/themes';
+import themes from '../../../theme/themes';
 
 export type DarkProps<T> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

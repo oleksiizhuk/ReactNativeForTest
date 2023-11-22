@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Button } from '../../../components/atoms/Button/Button';
-import { Title } from '../../../components/atoms/Title/Title';
+import { Button } from '../../../components/Atoms/Button/Button';
+import { Title } from '../../../components/Atoms/Title/Title';
 
 export const JSTopicScreen = memo(() => {
   const navigation = useNavigation<any>();

@@ -10,7 +10,7 @@ import {
   themes,
   DefaultVariables,
 } from '../../theme';
-import { ThemeState } from '../../store/theme/types';
+import { ThemeState } from '../../store/reducers/theme/types';
 import {
   ThemeVariables,
   Theme,

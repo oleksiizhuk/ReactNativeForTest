@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useState, useTransition } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { Input } from '../../../components/atoms/Input/Input';
+import { Input } from '../../../components/Atoms/Input/Input';
 import { City } from '../../../constant/city';
 
 // dont work

@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { Button } from '../../components/atoms/Button/Button';
+import { Button } from '../../components/Atoms/Button/Button';
 import { useNavigation } from '@react-navigation/native';
-import { Title } from '../../components/atoms/Title/Title';
+import { Title } from '../../components/Atoms/Title/Title';
 
 export const TopicScreen = memo(() => {
   const navigation = useNavigation<any>();
@@ -19,6 +19,9 @@ export const TopicScreen = memo(() => {
     return navigation.navigate('JSTopicScreen');
   }, [navigation]);
 
+  const navigateToTodo = useCallback(() => {
+    return navigation.navigate('TodoScreen');
+  }, [navigation]);
   return (
     <ScrollView style={styles.container}>
       <Title title={'Topics'} />
@@ -35,6 +38,11 @@ export const TopicScreen = memo(() => {
       <Button
         text={'JS Topic'}
         onPress={navigateToJS}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'Todo'}
+        onPress={navigateToTodo}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>

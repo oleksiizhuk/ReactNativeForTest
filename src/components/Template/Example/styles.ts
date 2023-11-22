@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { useTheme } from '../../hooks';
+import { useTheme } from '../../../hooks';
 
 export const ExampleStyles = () => {
   const { darkMode: isDark } = useTheme();

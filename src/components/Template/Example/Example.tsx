@@ -10,10 +10,10 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import i18next from 'i18next';
-import { Brand } from '../../components/atoms';
-import { useTheme } from '../../hooks';
+import { Brand } from '../../Atoms';
+import { useTheme } from '../../../hooks';
 import { ExampleStyles } from './styles';
-import { ThemeState } from '../../store/theme/types';
+import { ThemeState } from '../../../store/reducers/theme/types';
 
 interface ExampleTemplateProps {
   isFetching: boolean;

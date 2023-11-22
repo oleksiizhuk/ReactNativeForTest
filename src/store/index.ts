@@ -13,8 +13,8 @@ import {
 } from 'redux-persist';
 import { MMKV } from 'react-native-mmkv';
 import { api } from '../services/api';
-import theme from './theme';
-import auth from './auth';
+import theme from './reducers/theme';
+import auth from './reducers/auth';
 
 const reducers = combineReducers({
   theme,

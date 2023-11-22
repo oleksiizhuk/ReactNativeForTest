@@ -1,5 +1,5 @@
 import React from 'react';
-import { StartupTemplate } from '../../template';
+import { StartupTemplate } from '../../components/Template';
 import { useStartupScreen } from './hooks';
 
 export const StartupScreen = () => {

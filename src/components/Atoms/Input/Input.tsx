@@ -60,6 +60,7 @@ export const Input = memo(
 const styles = StyleSheet.create({
   container: {
     marginVertical: 5,
+    flex: 1
   },
   labelContainer: {
     marginBottom: 5,

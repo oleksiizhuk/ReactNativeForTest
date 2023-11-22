@@ -1,9 +1,9 @@
 import React, { memo, useState, useCallback, lazy, Suspense } from 'react';
 import { ScrollView, StyleSheet, Text } from 'react-native';
-import { CheckBox } from '../../../components/atoms/CheckBox/CheckBox';
-// import BigComponent from '../../../components/atoms/BigComponent/BigComponent';
+import { CheckBox } from '../../../components/Atoms/CheckBox/CheckBox';
+// import BigComponent from '../../../components/Atoms/BigComponent/BigComponent';
 const BigComponent = lazy<React.ComponentType>(() =>
-  delayForDemo(import('../../../components/atoms/BigComponent/BigComponent')),
+  delayForDemo(import('../../../components/Atoms/BigComponent/BigComponent')),
 );
 
 export const LazyScreen = memo(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { DraggableBox } from './Component/DraggableBox';
-import { Title } from '../../../components/atoms/Title/Title';
+import { Title } from '../../../components/Atoms/Title/Title';
 
 export const ReanimatedScreen = () => {
   return (

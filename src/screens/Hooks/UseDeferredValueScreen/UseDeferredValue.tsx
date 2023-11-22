@@ -7,8 +7,8 @@ import React, {
 } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { City } from '../../../constant/city';
-import { Input } from '../../../components/atoms/Input/Input';
-import { CheckBox } from '../../../components/atoms/CheckBox/CheckBox';
+import { Input } from '../../../components/Atoms/Input/Input';
+import { CheckBox } from '../../../components/Atoms/CheckBox/CheckBox';
 
 // Debounce
 export const UseDeferredValueScreen = memo(() => {
