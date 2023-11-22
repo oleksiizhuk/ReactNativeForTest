@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { TodoItemType } from '../../../components/Template/Todo/types'
+import { TodoState } from './types'
+
+export const initialState: TodoState = {
+  data: [],
+}
 
 const slice = createSlice({
   name: 'auth',
-  initialState: {
-    data: [
-      { id: 1, text: 'text 1' },
-      { id: 2, text: 'text 2' },
-    ],
-  },
+  initialState: initialState,
   reducers: {
     addItem: (state, { payload }) => {
       state.data.push(payload)
