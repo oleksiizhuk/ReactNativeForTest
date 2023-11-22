@@ -10,8 +10,11 @@ const slice = createSlice({
     ],
   },
   reducers: {
-    addItem: (state, { payload }: AddItemPayload) => {
+    addItem: (state, { payload }) => {
       state.data.push(payload);
+    },
+    deleteTodoItemById: (state, { payload: id }) => {
+      state.data = state.data.filter(item => item.id !== id);
     },
   },
 });
@@ -20,6 +23,6 @@ export type AddItemPayload = {
   payload: TodoItemType;
 };
 
-export const { addItem } = slice.actions;
+export const { addItem, deleteTodoItemById } = slice.actions;
 
 export default slice.reducer;

@@ -10,16 +10,24 @@ interface ButtonProps {
   onPress?: () => void;
   type?: ButtonType.Small | ButtonType.Default;
   styleContainer?: ViewStyle;
+  disabled?: boolean;
 }
 
 export const Button = memo<ButtonProps>(
-  ({ text, onPress, type = ButtonType.Default, styleContainer }) => {
+  ({ text, onPress, type = ButtonType.Default, styleContainer, disabled }) => {
     return (
       <TouchableOpacity
         onPress={onPress}
-        style={[styles[`${type}Container`], styleContainer]}
+        style={[
+          styles[`${type}Container`],
+          disabled && styles.containerDisabled,
+          styleContainer,
+        ]}
+        disabled={disabled}
       >
-        <Text style={[styles[`${type}Text`]]}>{text}</Text>
+        <Text style={[styles[`${type}Text`], disabled && styles.textDisabled]}>
+          {text}
+        </Text>
       </TouchableOpacity>
     );
   },
@@ -59,6 +67,11 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
+  containerDisabled: {
+    borderColor: '#aaa',
+    backgroundColor: '#eee',
+    elevation: 0,
+  },
   [`${ButtonType.Default}Text`]: {
     fontSize: 18,
     lineHeight: 22,
@@ -70,5 +83,8 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: '#004aad',
     textAlign: 'center',
+  },
+  textDisabled: {
+    color: '#aaa',
   },
 });

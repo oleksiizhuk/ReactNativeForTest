@@ -1,7 +1,7 @@
 export interface TodoItemProps {
-  id: number;
+  id: string;
   text: string;
-  onDelete: () => void;
+  onDelete: (id: string) => void;
   onEdit: () => void;
   onComplete: () => void;
 }

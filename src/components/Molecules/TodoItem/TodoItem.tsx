@@ -1,10 +1,13 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TodoItemProps } from './types';
 import { styles } from './styles';
 
 export const TodoItem = memo<TodoItemProps>(
   ({ id, text, onDelete, onEdit, onComplete }) => {
+    const onDeleteItem = useCallback(() => {
+      onDelete(id);
+    }, [id, onDelete]);
     return (
       <View style={styles.itemContainer}>
         <TouchableOpacity onPress={onComplete}>
@@ -17,7 +20,7 @@ export const TodoItem = memo<TodoItemProps>(
           <TouchableOpacity onPress={onEdit}>
             <Text style={styles.buttonText}>Edit</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={onDelete}>
+          <TouchableOpacity onPress={onDeleteItem}>
             <Text style={styles.buttonText}>Delete</Text>
           </TouchableOpacity>
         </View>
