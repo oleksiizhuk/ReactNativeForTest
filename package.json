@@ -26,6 +26,7 @@
     "appcenter": "5.0.0",
     "appcenter-analytics": "5.0.0",
     "appcenter-crashes": "5.0.0",
+    "husky": "^8.0.3",
     "i18next": "^23.2.3",
     "react": "18.2.0",
     "react-i18next": "^13.0.1",

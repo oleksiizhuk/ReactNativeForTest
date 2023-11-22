@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { rootSaga } from './sagas/rootSaga'
 import { combineReducers } from 'redux'
-import { asyncReducers } from 'react-redux-help-kit'
+// import { asyncReducers } from 'react-redux-help-kit'
+// @ts-ignore
 import createSagaMiddleware from 'redux-saga'
 import { reducers } from './reducers'
 import { sagas } from './sagas/sagas'
@@ -12,7 +13,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const initReduxStore = () => {
   const rootReducer = combineReducers({
-    ...asyncReducers,
+    // ...asyncReducers,
     ...reducers,
   })
 

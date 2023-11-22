@@ -21,6 +21,7 @@ export const useStartupScreen = () => {
 
   useEffect(() => {
     init()
+    // eslint-disable-next-line
   }, [])
 
   return {}
