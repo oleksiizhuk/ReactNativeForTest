@@ -1,29 +1,36 @@
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
 interface TaskItemProps {
   text?: string
-  status?: string // Add status to represent the ticket status like 'In Progress', 'Done', etc.
+  status?: string
+  onPress?: () => void
+  testId?: string
 }
 
-export const TaskItem = memo<TaskItemProps>(({ text = 'a', status }) => {
-  console.log('text = ', text)
-  return (
-    <View style={styles.taskContainer}>
-      <View style={styles.imageContainer}>
-        <Text>Image</Text>
-      </View>
-      <View style={styles.messageContainer}>
-        <Text style={styles.textStyle}>{text}</Text>
-      </View>
-      {status ? (
-        <View style={styles.statusContainer}>
-          <Text style={styles.statusText}>{status}</Text>
+export const TaskItem = memo<TaskItemProps>(
+  ({ text = 'a', status, onPress, testId }) => {
+    return (
+      <TouchableOpacity
+        style={styles.taskContainer}
+        onPress={onPress}
+        testID={testId}
+      >
+        <View style={styles.imageContainer}>
+          <Text>Image</Text>
         </View>
-      ) : null}
-    </View>
-  )
-})
+        <View style={styles.messageContainer}>
+          <Text style={styles.textStyle}>{text}</Text>
+        </View>
+        {status ? (
+          <View style={styles.statusContainer}>
+            <Text style={styles.statusText}>{status}</Text>
+          </View>
+        ) : null}
+      </TouchableOpacity>
+    )
+  },
+)
 
 const styles = StyleSheet.create({
   taskContainer: {

@@ -16,11 +16,13 @@ import { api } from '../services/api'
 import theme from './reducers/theme'
 import auth from './reducers/auth'
 import todo from './reducers/todo'
+import board from './reducers/board'
 
 const reducers = combineReducers({
   theme,
   auth,
   todo,
+  board,
   [api.reducerPath]: api.reducer,
 })
 
@@ -43,7 +45,7 @@ export const reduxStorage: Storage = {
 const persistConfig = {
   key: 'root',
   storage: reduxStorage,
-  whitelist: ['theme', 'auth', 'todo'],
+  whitelist: ['theme', 'auth', 'todo', 'board'],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

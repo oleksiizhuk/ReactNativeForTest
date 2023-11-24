@@ -51,7 +51,7 @@ export const TopicScreen = memo(() => {
         styleContainer={styles.buttonContainer}
       />
       <Button
-        text={'Board'}
+        text={'board'}
         onPress={navigateToBoard}
         styleContainer={styles.buttonContainer}
       />

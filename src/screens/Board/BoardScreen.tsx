@@ -1,6 +1,8 @@
 import React from 'react'
 import { BoardTemplate } from '../../components/Template/Board/BoardTeamplate'
+import { useBoardData } from './hook/useBoardData'
 
 export const BoardScreen = () => {
-  return <BoardTemplate />
+  const boardData = useBoardData()
+  return <BoardTemplate {...boardData} />
 }

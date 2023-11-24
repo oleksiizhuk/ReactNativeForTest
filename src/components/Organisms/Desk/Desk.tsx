@@ -5,11 +5,15 @@ import { TaskItem } from '../../Molecules/TaskItem/TaskItem'
 interface DeskProps {
   title: string
   itemList?: any[]
+  time?: string
 }
-export const Desk = memo<DeskProps>(({ title, itemList = [] }) => {
+export const Desk = memo<DeskProps>(({ title, itemList = [], time = '1h' }) => {
   return (
     <View style={styles.desk}>
-      <Text style={styles.desk_title}>{title}</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.desk_title}>{title}</Text>
+        <Text>{`Time: ${time}`}</Text>
+      </View>
       <View>
         {itemList.map(({ text, id }) => {
           return <TaskItem text={text} key={id} />
@@ -25,8 +29,9 @@ const styles = StyleSheet.create({
     padding: 5,
     flex: 1,
   },
-  desk_title: {
+  titleContainer: {
     marginBottom: 10,
     marginTop: 5,
   },
+  desk_title: {},
 })
