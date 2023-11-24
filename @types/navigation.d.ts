@@ -23,6 +23,7 @@ export type ApplicationStackParamList = {
   JSAsynkScreen: undefined
   JSHTMLTreeScreen: undefined
   TodoScreen: undefined
+  BoardScreen: undefined
 }
 
 export type ApplicationScreenProps = StackScreenProps<ApplicationStackParamList>

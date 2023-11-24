@@ -22,6 +22,11 @@ export const TopicScreen = memo(() => {
   const navigateToTodo = useCallback(() => {
     return navigation.navigate('TodoScreen')
   }, [navigation])
+
+  const navigateToBoard = useCallback(() => {
+    return navigation.navigate('BoardScreen')
+  }, [navigation])
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'Topics'} />
@@ -43,6 +48,11 @@ export const TopicScreen = memo(() => {
       <Button
         text={'Todo'}
         onPress={navigateToTodo}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'Board'}
+        onPress={navigateToBoard}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>

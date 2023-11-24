@@ -24,6 +24,7 @@ import { JSTopicScreen } from '../screens/JS/JSTopicScreen/JSTopicScreen'
 import { JSAsynkScreen } from '../screens/JS/JSAsynkScreen/JSAsynkScreen'
 import { JSHTMLTreeScreen } from '../screens/JS/JSHTMLTreeScreen/JSHTMLTreeScreen'
 import { TodoScreen } from '../screens/Todo/TodoScreen'
+import { BoardScreen } from '../screens/Board/BoardScreen'
 
 const Stack = createStackNavigator<ApplicationStackParamList>()
 
@@ -72,6 +73,7 @@ export const ApplicationNavigator = () => {
           <Stack.Screen name="JSAsynkScreen" component={JSAsynkScreen} />
           <Stack.Screen name="JSHTMLTreeScreen" component={JSHTMLTreeScreen} />
           <Stack.Screen name="TodoScreen" component={TodoScreen} />
+          <Stack.Screen name="BoardScreen" component={BoardScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
