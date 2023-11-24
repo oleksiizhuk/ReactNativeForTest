@@ -18,6 +18,7 @@
     "reset:all": "yarn reinstall:react && yarn reinstall:ios"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "^4.5.1",
     "@react-native-masked-view/masked-view": "^0.2.9",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
@@ -28,6 +29,7 @@
     "appcenter-crashes": "5.0.0",
     "husky": "^8.0.3",
     "i18next": "^23.2.3",
+    "lodash": "^4.17.21",
     "react": "18.2.0",
     "react-i18next": "^13.0.1",
     "react-native": "0.72.6",
