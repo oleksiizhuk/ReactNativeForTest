@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { TodoItemType } from '../../../components/Template/Todo/types'
 import { TodoState } from './types'
 
 export const initialState: TodoState = {
@@ -8,7 +7,7 @@ export const initialState: TodoState = {
 
 const slice = createSlice({
   name: 'auth',
-  initialState: initialState,
+  initialState,
   reducers: {
     addItem: (state, { payload }) => {
       state.data.push(payload)
@@ -18,10 +17,6 @@ const slice = createSlice({
     },
   },
 })
-
-export type AddItemPayload = {
-  payload: TodoItemType
-}
 
 export const { addItem, deleteTodoItemById } = slice.actions
 
