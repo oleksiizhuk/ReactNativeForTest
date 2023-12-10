@@ -5,6 +5,5 @@ export function factorial(n: number): number {
   return n * factorial(n - 1)
 }
 
-// Примеры вызова
 console.log(factorial(5)) // Должно вернуть факториал 120
 console.log(factorial(3)) // Должно вернуть факториал 6
