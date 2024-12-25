@@ -21,7 +21,9 @@ export const DraggableBox = memo<DraggableBox>(({ children }) => {
     },
     onActive: (event, context) => {
       offset.value = {
+        // @ts-ignore
         x: context.startX + event.translationX,
+        // @ts-ignore
         y: context.startY + event.translationY,
       }
     },

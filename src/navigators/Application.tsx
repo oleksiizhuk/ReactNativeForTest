@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StatusBar } from 'react-native'
-import { useFlipper } from '@react-navigation/devtools'
+// import { useFlipper } from '@react-navigation/devtools'
 import { createStackNavigator } from '@react-navigation/stack'
 import {
   NavigationContainer,
@@ -34,7 +34,7 @@ export const ApplicationNavigator = () => {
 
   const navigationRef = useNavigationContainerRef()
 
-  useFlipper(navigationRef)
+  // useFlipper(navigationRef)
 
   return (
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
