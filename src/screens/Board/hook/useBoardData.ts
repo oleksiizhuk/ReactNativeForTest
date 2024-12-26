@@ -1,4 +1,4 @@
-import { DestItemType } from '../../../components/Template/Board/BoardTeamplate'
+import { DestItemType } from '../../../components/Template/Board/BoardTemplate.type'
 import { useSelector } from 'react-redux'
 import { selectRecommendation } from '../../../store/selector/board'
 

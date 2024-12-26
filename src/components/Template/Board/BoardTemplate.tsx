@@ -1,24 +1,13 @@
 import React, { memo, useRef, useCallback } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View, Text } from 'react-native'
 import { Desk } from '../../Organisms/Desk/Desk'
 import { TaskItem } from '../../Molecules/TaskItem/TaskItem'
 import { HorizontalList } from '../../Molecules/HorizontalList/HorizontalList'
 import { BottomSheet } from '../../Molecules/BottomSheet/BottomSheet'
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
 import { Button } from '../../Atoms/Button/Button'
-
-export type DestItemType = {
-  id: string
-  text: string
-  type: string
-  time: string
-}
-interface BoardTemplateProps {
-  waitingList: DestItemType[]
-  inProgressList: DestItemType[]
-  recommendationList: DestItemType[]
-  doneList: DestItemType[]
-}
+import { BoardTemplateProps } from './BoardTemplate.type'
+import { BoardTemplateStyles } from './BoardTemplate.styles'
 
 export const BoardTemplate = memo<BoardTemplateProps>(
   ({ waitingList, inProgressList, recommendationList, doneList }) => {
@@ -26,6 +15,7 @@ export const BoardTemplate = memo<BoardTemplateProps>(
     const handlePresentModalPress = useCallback(() => {
       bottomSheetModalRef.current?.present()
     }, [])
+    const styles = BoardTemplateStyles()
 
     return (
       <View style={styles.container}>
@@ -59,14 +49,3 @@ export const BoardTemplate = memo<BoardTemplateProps>(
     )
   },
 )
-
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 8,
-    flex: 1,
-  },
-  deskContainer: {
-    flexDirection: 'row',
-    minHeight: '50%',
-  },
-})
