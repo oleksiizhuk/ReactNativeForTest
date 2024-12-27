@@ -1,6 +1,6 @@
 import { Button, Text, TextInput, View } from 'react-native'
 import React from 'react'
-import { LowCouplingStyles } from './LowCouplingScreen.styles'
+import { LowCouplingStyles } from './LowCoupling.styles'
 
 interface LowCouplingTemplateProps {
   users: any[]
@@ -18,13 +18,6 @@ export const LowCouplingTemplate = ({
     <View style={styles.container}>
       {users && users.map((user) => <Text key={user?.id}>{user?.name}</Text>)}
 
-      {/*<Button title="Open Modal" onPress={openModal} />*/}
-      {/*<ModalComponent>*/}
-      {/*  <Text>This is a modal</Text>*/}
-      {/*  <Button title="Close Modal" onPress={closeModal} />*/}
-      {/*</ModalComponent>*/}
-
-      {/* Form */}
       <TextInput
         placeholder="Name"
         value={values.name}
