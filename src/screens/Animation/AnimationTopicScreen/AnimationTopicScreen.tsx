@@ -19,6 +19,14 @@ export const AnimationTopicScreen = memo(() => {
     return navigation.navigate('ReanimatedScreen')
   }, [navigation])
 
+  const navigateToCarouselScreen = useCallback(() => {
+    return navigation.navigate('CarouselScreen')
+  }, [navigation])
+
+  const navigateToCarouselFlatListScreen = useCallback(() => {
+    return navigation.navigate('CarouselFlatListScreen')
+  }, [navigation])
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'Animation'} />
@@ -35,6 +43,16 @@ export const AnimationTopicScreen = memo(() => {
       <Button
         text={'ReanimatedScreen'}
         onPress={navigateToReanimated}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'CarouselScreen'}
+        onPress={navigateToCarouselScreen}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'CarouselFlatListScreen'}
+        onPress={navigateToCarouselFlatListScreen}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>

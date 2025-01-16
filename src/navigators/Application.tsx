@@ -1,6 +1,5 @@
 import React from 'react'
 import { SafeAreaView, StatusBar } from 'react-native'
-// import { useFlipper } from '@react-navigation/devtools'
 import { createStackNavigator } from '@react-navigation/stack'
 import {
   NavigationContainer,
@@ -25,6 +24,8 @@ import { JSAsynkScreen } from '../screens/JS/JSAsynkScreen/JSAsynkScreen'
 import { JSHTMLTreeScreen } from '../screens/JS/JSHTMLTreeScreen/JSHTMLTreeScreen'
 import { TodoScreen } from '../screens/Todo/TodoScreen'
 import { BoardScreen } from '../screens/Board/BoardScreen'
+import { CarouselScreen } from '../screens/Animation/CarouselScreen/CarouselScreen'
+import { CarouselFlatListScreen } from '../screens/Animation/CarouselFlatListScreen/CarouselFlatListScreen'
 
 const Stack = createStackNavigator<ApplicationStackParamList>()
 
@@ -74,6 +75,11 @@ export const ApplicationNavigator = () => {
           <Stack.Screen name="JSHTMLTreeScreen" component={JSHTMLTreeScreen} />
           <Stack.Screen name="TodoScreen" component={TodoScreen} />
           <Stack.Screen name="BoardScreen" component={BoardScreen} />
+          <Stack.Screen name="CarouselScreen" component={CarouselScreen} />
+          <Stack.Screen
+            name="CarouselFlatListScreen"
+            component={CarouselFlatListScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

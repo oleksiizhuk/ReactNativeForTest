@@ -24,6 +24,8 @@ export type ApplicationStackParamList = {
   JSHTMLTreeScreen: undefined
   TodoScreen: undefined
   BoardScreen: undefined
+  CarouselScreen: undefined
+  CarouselFlatListScreen: undefined
 }
 
 export type ApplicationScreenProps = StackScreenProps<ApplicationStackParamList>
