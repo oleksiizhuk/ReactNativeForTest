@@ -26,6 +26,8 @@ export type ApplicationStackParamList = {
   BoardScreen: undefined
   CarouselScreen: undefined
   CarouselFlatListScreen: undefined
+  CarouselReanimatedScreen: undefined
+  CarouselWithLibrary: undefined
 }
 
 export type ApplicationScreenProps = StackScreenProps<ApplicationStackParamList>

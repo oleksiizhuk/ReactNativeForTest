@@ -26,6 +26,8 @@ import { TodoScreen } from '../screens/Todo/TodoScreen'
 import { BoardScreen } from '../screens/Board/BoardScreen'
 import { CarouselScreen } from '../screens/Animation/CarouselScreen/CarouselScreen'
 import { CarouselFlatListScreen } from '../screens/Animation/CarouselFlatListScreen/CarouselFlatListScreen'
+import { CarouselReanimatedScreen } from '../screens/Animation/CarouselReanimatedScreen/CarouselReanimatedScreen'
+import { CarouselWithLibrary } from '../screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
 
 const Stack = createStackNavigator<ApplicationStackParamList>()
 
@@ -77,8 +79,16 @@ export const ApplicationNavigator = () => {
           <Stack.Screen name="BoardScreen" component={BoardScreen} />
           <Stack.Screen name="CarouselScreen" component={CarouselScreen} />
           <Stack.Screen
+            name="CarouselWithLibrary"
+            component={CarouselWithLibrary}
+          />
+          <Stack.Screen
             name="CarouselFlatListScreen"
             component={CarouselFlatListScreen}
+          />
+          <Stack.Screen
+            name="CarouselReanimatedScreen"
+            component={CarouselReanimatedScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>
