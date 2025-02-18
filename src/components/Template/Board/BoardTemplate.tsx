@@ -33,8 +33,8 @@ export const BoardTemplate = memo<BoardTemplateProps>(
           <Desk title={'Done'} itemList={doneList} />
         </View>
         <BottomSheet bottomSheetModalRef={bottomSheetModalRef}>
-          <View style={{ marginHorizontal: 8, flex: 1 }}>
-            <View style={{ flex: 1 }}>
+          <View style={styles.BottomSheetContainer}>
+            <View style={styles.content}>
               <View>
                 <Text>Change status: </Text>
               </View>
