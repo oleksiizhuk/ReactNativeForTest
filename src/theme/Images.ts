@@ -1,4 +1,4 @@
-import { ThemeVariables } from '../../@types/theme';
+import { ThemeVariables } from '../../@types/theme'
 
 export default function ({}: ThemeVariables) {
   return {
@@ -17,5 +17,5 @@ export default function ({}: ThemeVariables) {
       send: require('./assets/images/send.png'),
       translate: require('./assets/images/translate.png'),
     },
-  };
+  }
 }

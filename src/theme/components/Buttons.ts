@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { CommonParams } from '../../../@types/theme';
+import { StyleSheet } from 'react-native'
+import { CommonParams } from '../../../@types/theme'
 
 export default function <C>({ Colors, Gutters, Layout }: CommonParams<C>) {
   const base = {
@@ -7,11 +7,11 @@ export default function <C>({ Colors, Gutters, Layout }: CommonParams<C>) {
     ...Gutters.regularHPadding,
     height: 40,
     backgroundColor: Colors.primary,
-  };
+  }
   const rounded = {
     ...base,
     borderRadius: 10,
-  };
+  }
   const circle = {
     ...Layout.center,
     height: 70,
@@ -20,7 +20,7 @@ export default function <C>({ Colors, Gutters, Layout }: CommonParams<C>) {
     backgroundColor: Colors.circleButtonBackground,
     color: Colors.circleButtonColor,
     fill: Colors.circleButtonColor,
-  };
+  }
 
   return StyleSheet.create({
     base,
@@ -38,5 +38,5 @@ export default function <C>({ Colors, Gutters, Layout }: CommonParams<C>) {
       borderWidth: 2,
       borderColor: Colors.primary,
     },
-  });
+  })
 }

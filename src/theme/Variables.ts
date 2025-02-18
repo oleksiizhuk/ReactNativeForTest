@@ -5,7 +5,7 @@
  * That allows to change them more easily later on.
  */
 
-import { ThemeNavigationColors } from '../../@types/theme';
+import { ThemeNavigationColors } from '../../@types/theme'
 
 /**
  * Colors
@@ -24,13 +24,13 @@ export const Colors = {
   //ComponentColors
   circleButtonBackground: '#E1E1EF',
   circleButtonColor: '#44427D',
-};
+}
 
 export const NavigationColors: Partial<ThemeNavigationColors> = {
   primary: Colors.primary,
   background: '#EFEFEF',
   card: '#EFEFEF',
-};
+}
 
 /**
  * FontSize
@@ -40,25 +40,25 @@ export const FontSize = {
   small: 16,
   regular: 20,
   large: 40,
-};
+}
 
 /**
  * Metrics Sizes
  */
-const tiny = 10;
-const small = tiny * 2; // 20
-const regular = tiny * 3; // 30
-const large = regular * 2; // 60
+const tiny = 10
+const small = tiny * 2 // 20
+const regular = tiny * 3 // 30
+const large = regular * 2 // 60
 export const MetricsSizes = {
   tiny,
   small,
   regular,
   large,
-};
+}
 
 export default {
   Colors,
   NavigationColors,
   FontSize,
   MetricsSizes,
-};
+}
