@@ -11,6 +11,7 @@
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		7768FF3FB5D08AABF00D3A6A /* libPods-MyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6ED866A9D65FEA9EE89B4 /* libPods-MyApp.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		AC1C3BFB2F0D2EC500017C05 /* RCTNativeStorage.mm in Sources */ = {isa = PBXBuildFile; fileRef = AC1C3BFA2F0D2EC500017C05 /* RCTNativeStorage.mm */; };
 		C064A70759553461DCAA2951 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 		402D626FC6180C79E39A0B8E /* Pods-MyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.release.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MyApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC1C3BF92F0D2EC500017C05 /* RCTNativeStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeStorage.h; sourceTree = "<group>"; };
+		AC1C3BFA2F0D2EC500017C05 /* RCTNativeStorage.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTNativeStorage.mm; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F4476009026C7A4633662248 /* Pods-MyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyApp.debug.xcconfig"; path = "Target Support Files/Pods-MyApp/Pods-MyApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +73,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				AC1C3BF42F0D2E1E00017C05 /* NativeStorage */,
 				13B07FAE1A68108700A75B9A /* MyApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -87,6 +91,15 @@
 				13B07F961A680F5B00A75B9A /* MyApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AC1C3BF42F0D2E1E00017C05 /* NativeStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AC1C3BF92F0D2EC500017C05 /* RCTNativeStorage.h */,
+				AC1C3BFA2F0D2EC500017C05 /* RCTNativeStorage.mm */,
+			);
+			path = NativeStorage;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -131,7 +144,7 @@
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 2620;
 					};
 				};
 			};
@@ -246,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1C3BFB2F0D2EC500017C05 /* RCTNativeStorage.mm in Sources */,
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

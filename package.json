@@ -19,6 +19,11 @@
       "javaPackageName": "com.myapp.specs"
     }
   },
+  "ios": {
+    "modulesProvider": {
+      "NativeStorage": "RCTNativeStorage"
+    }
+  },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5",
     "@react-native/new-app-screen": "0.83.1",
