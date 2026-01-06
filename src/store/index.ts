@@ -1,5 +1,5 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query'
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
 import {
   persistReducer,
   persistStore,
@@ -10,13 +10,12 @@ import {
   PURGE,
   REGISTER,
   Storage,
-} from 'redux-persist'
-import { MMKV } from 'react-native-mmkv'
-import { api } from '../services/api'
-import theme from './reducers/theme'
-import auth from './reducers/auth'
-import todo from './reducers/todo'
-import board from './reducers/board'
+} from 'redux-persist';
+import { api } from '../services/api';
+import theme from './reducers/theme';
+import auth from './reducers/auth';
+import todo from './reducers/todo';
+import board from './reducers/board';
 
 const reducers = combineReducers({
   theme,
@@ -24,52 +23,64 @@ const reducers = combineReducers({
   todo,
   board,
   [api.reducerPath]: api.reducer,
-})
+});
 
-const storage = new MMKV()
+// const storage = new MMKV()
+const storage = {
+  obj: {} as Record<string, any>,
+
+  set(key: string, value: any) {
+    console.log('key = ', key);
+    console.log('value = ', value);
+    this.obj[key] = value;
+  },
+
+  getString(key: string): any {
+    return this.obj[key];
+  },
+
+  delete(key: string) {
+    delete this.obj[key];
+  },
+};
 export const reduxStorage: Storage = {
   setItem: (key, value) => {
-    storage.set(key, value)
-    return Promise.resolve(true)
+    storage.set(key, value);
+    return Promise.resolve(true);
   },
-  getItem: (key) => {
-    const value = storage.getString(key)
-    return Promise.resolve(value)
+  getItem: key => {
+    const value = storage.getString(key);
+    return Promise.resolve(value);
   },
-  removeItem: (key) => {
-    storage.delete(key)
-    return Promise.resolve()
+  removeItem: key => {
+    storage.delete(key);
+    return Promise.resolve();
   },
-}
+};
 
 const persistConfig = {
   key: 'root',
   storage: reduxStorage,
   whitelist: ['theme', 'auth', 'todo', 'board'],
-}
+};
 
-const persistedReducer = persistReducer(persistConfig, reducers)
+const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => {
+  middleware: getDefaultMiddleware => {
     const middlewares = getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(api.middleware)
+    }).concat(api.middleware);
 
-    // if (__DEV__ && !process.env.JEST_WORKER_ID) {
-    //   const createDebugger = require('redux-flipper').default
-    //   middlewares.push(createDebugger())
-    // }
-
-    return middlewares
+    return middlewares;
   },
-})
+});
 
-const persistor = persistStore(store)
+const persistor = persistStore(store);
 
-setupListeners(store.dispatch)
+setupListeners(store.dispatch);
 
-export { store, persistor }
+export { store, persistor };

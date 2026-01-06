@@ -5,7 +5,7 @@ import { firstAction } from '../actions/app'
 export function rootSaga(sagas: StoreSagas, _extaRootSaga?: () => any) {
   const { fetchUser } = sagas
 
-  return function* rootSaga() {
+  return function* testSaga() {
     yield takeEvery(firstAction.type, fetchUser)
   }
 }

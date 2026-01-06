@@ -10,7 +10,7 @@ export const LazyScreen = memo(() => {
   const [isActive, setIsActive] = useState(false)
 
   const toggleCheckBox = useCallback(() => {
-    setIsActive((isActive) => !isActive)
+    setIsActive(prevState => !prevState);
   }, [])
 
   return (
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 })
 
 function delayForDemo(promise: any) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, 2000)
-  }).then(() => promise)
+  return new Promise<void>(resolve => {
+    setTimeout(() => resolve(), 2000);
+  }).then(() => promise);
 }

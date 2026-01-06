@@ -1,6 +1,8 @@
 import React from 'react'
 import { SafeAreaView, StatusBar } from 'react-native'
-import { createStackNavigator } from '@react-navigation/stack'
+import {
+  createStackNavigator,
+} from '@react-navigation/stack';
 import {
   NavigationContainer,
   useNavigationContainerRef,
@@ -11,7 +13,6 @@ import { useTheme } from '../hooks'
 import { MainNavigator } from './Main'
 import { AnimationTopicScreen } from '../screens/Animation/AnimationTopicScreen/AnimationTopicScreen'
 import { AnimatedAPIScreen } from '../screens/Animation/AnimatedAPI/AnimatedAPIScreen'
-import { ApplicationStackParamList } from '../../@types/navigation'
 import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/ReanimatedScreen'
 import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen'
 import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue'
@@ -29,7 +30,7 @@ import { CarouselFlatListScreen } from '../screens/Animation/CarouselFlatListScr
 import { CarouselReanimatedScreen } from '../screens/Animation/CarouselReanimatedScreen/CarouselReanimatedScreen'
 import { CarouselWithLibrary } from '../screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
 
-const Stack = createStackNavigator<ApplicationStackParamList>()
+const Stack = createStackNavigator<any>()
 
 export const ApplicationNavigator = () => {
   const { Layout, darkMode, NavigationTheme } = useTheme()
@@ -37,7 +38,6 @@ export const ApplicationNavigator = () => {
 
   const navigationRef = useNavigationContainerRef()
 
-  // useFlipper(navigationRef)
 
   return (
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
