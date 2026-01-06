@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-android:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'yarn'
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -28,7 +28,10 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Build Android Release
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+      - name: Build Android Release APK
         working-directory: android
         run: ./gradlew assembleRelease
 
@@ -36,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: android/app/build/outputs/apk/release/app-release.apk
+          path: android/app/build/outputs/apk/release/*.apk
