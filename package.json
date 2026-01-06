@@ -7,7 +7,17 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "clear:gradle": "cd android && ./gradlew clean && cd ..",
+    "clear:ios": "cd ios && xcodebuild clean && cd .."
+  },
+  "codegenConfig": {
+    "name": "MyAppSpecs",
+    "type": "modules",
+    "jsSrcsDir": "src/specs",
+    "android": {
+      "javaPackageName": "com.myapp.specs"
+    }
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5",
