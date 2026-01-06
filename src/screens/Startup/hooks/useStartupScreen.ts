@@ -19,6 +19,7 @@ export const useStartupScreen = () => {
     });
   }, [navigation]);
 
+
   useEffect(() => {
     init();
     // eslint-disable-next-line
