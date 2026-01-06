@@ -28,12 +28,20 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
       - name: Build Android Release APK
         working-directory: android
-        run: ./gradlew assembleRelease
+        run: |
+          for i in 1 2 3; do
+            ./gradlew assembleRelease --no-daemon && break || sleep 30
+          done
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
