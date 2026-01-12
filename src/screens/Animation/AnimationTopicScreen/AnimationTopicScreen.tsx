@@ -1,98 +1,168 @@
 import React, { memo, useCallback } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Button } from '../../../components/Atoms/Button/Button';
-import { Title } from '../../../components/Atoms/Title/Title';
-import { useStyles } from './AnimationTopicScreen.styles.ts';
+import { useStyles } from './AnimationTopicScreen.styles';
+import { FeaturedCard, NavigationCard } from './components';
 
 export const AnimationTopicScreen = memo(() => {
   const navigation = useNavigation<any>();
-
   const styles = useStyles();
+
   const navigateToAnimatedAPI = useCallback(() => {
-    return navigation.navigate('AnimatedAPIScreen');
+    navigation.navigate('AnimatedAPIScreen');
   }, [navigation]);
 
   const navigateToLayoutAnimation = useCallback(() => {
-    return navigation.navigate('LayoutAnimationScreen');
+    navigation.navigate('LayoutAnimationScreen');
   }, [navigation]);
 
   const navigateToReanimated = useCallback(() => {
-    return navigation.navigate('ReanimatedScreen');
+    navigation.navigate('ReanimatedScreen');
   }, [navigation]);
 
   const navigateToCarouselScreen = useCallback(() => {
-    return navigation.navigate('CarouselScreen');
+    navigation.navigate('CarouselScreen');
   }, [navigation]);
 
   const navigateToCarouselFlatListScreen = useCallback(() => {
-    return navigation.navigate('CarouselFlatListScreen');
+    navigation.navigate('CarouselFlatListScreen');
   }, [navigation]);
 
   const navigateToCarouselReanimatedScreen = useCallback(() => {
-    return navigation.navigate('CarouselReanimatedScreen');
+    navigation.navigate('CarouselReanimatedScreen');
   }, [navigation]);
 
   const navigateToCarouselWithLibrary = useCallback(() => {
-    return navigation.navigate('CarouselWithLibrary');
+    navigation.navigate('CarouselWithLibrary');
   }, [navigation]);
 
   const navigateToReactAnimationVsReanimated = useCallback(() => {
-    return navigation.navigate('ReactAnimationVsReanimated');
+    navigation.navigate('ReactAnimationVsReanimated');
   }, [navigation]);
 
   const navigateToGestureHandlerExample = useCallback(() => {
-    return navigation.navigate('GestureHandlerExample');
+    navigation.navigate('GestureHandlerExample');
   }, [navigation]);
 
   return (
-    <ScrollView style={styles.container}>
-      <Title title={'Animation'} />
-      <Button
-        text={'Animated API'}
-        onPress={navigateToAnimatedAPI}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'Layout Animation'}
-        onPress={navigateToLayoutAnimation}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'ReanimatedScreen'}
-        onPress={navigateToReanimated}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'CarouselScreen'}
-        onPress={navigateToCarouselScreen}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'CarouselFlatListScreen'}
-        onPress={navigateToCarouselFlatListScreen}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'CarouselReanimatedScree'}
-        onPress={navigateToCarouselReanimatedScreen}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'CarouselWithLibrary'}
-        onPress={navigateToCarouselWithLibrary}
-        styleContainer={styles.buttonContainer}
-      />
-      <Button
-        text={'ReactAnimationVsReanimated'}
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.content}
+      showsVerticalScrollIndicator={false}
+    >
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Animation Lab</Text>
+        <Text style={styles.headerSubtitle}>
+          Explore React Native animations from{' '}
+          <Text style={styles.headerAccent}>basics to advanced</Text>. Learn
+          through interactive examples.
+        </Text>
+      </View>
+
+      {/* Featured Section */}
+      <FeaturedCard
+        icon="⚡"
+        title="Animated vs Reanimated"
+        subtitle="Performance Comparison"
+        description="See the real difference between JS thread and UI thread animations. Stress test both and watch one lag while the other stays smooth."
         onPress={navigateToReactAnimationVsReanimated}
-        styleContainer={styles.buttonContainer}
+        iconBgStyle={styles.bgWarning}
+        badgeText="Must See"
       />
-      <Button
-        text={'navigateToGestureHandlerExample'}
+
+      <FeaturedCard
+        icon="👆"
+        title="Gesture Handler"
+        subtitle="Touch Interactions"
+        description="Master pan, pinch, swipe, and tap gestures. Build drag-and-drop, zoom, and swipeable cards with native performance."
         onPress={navigateToGestureHandlerExample}
-        styleContainer={styles.buttonContainer}
+        iconBgStyle={styles.bgPink}
+        badgeText="Interactive"
       />
+
+      <View style={styles.divider} />
+
+      {/* Animation Basics Section */}
+      <View style={styles.section}>
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionIcon}>🎬</Text>
+          <Text style={styles.sectionTitle}>Animation Basics</Text>
+        </View>
+        <Text style={styles.sectionDescription}>
+          Core animation concepts and APIs
+        </Text>
+
+        <View style={styles.cardsRow}>
+          <NavigationCard
+            icon="📊"
+            title="Animated API"
+            description="Built-in RN animation system"
+            onPress={navigateToAnimatedAPI}
+            iconBgStyle={styles.bgPrimary}
+          />
+          <NavigationCard
+            icon="🔄"
+            title="Layout Animation"
+            description="Automatic layout transitions"
+            onPress={navigateToLayoutAnimation}
+            iconBgStyle={styles.bgSecondary}
+          />
+          <NavigationCard
+            icon="🚀"
+            title="Reanimated"
+            description="UI thread animations"
+            onPress={navigateToReanimated}
+            iconBgStyle={styles.bgAccent}
+            badge="PRO"
+            badgeStyle={styles.badgeSuccess}
+          />
+        </View>
+      </View>
+
+      {/* Carousel Section */}
+      <View style={styles.section}>
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionIcon}>🎠</Text>
+          <Text style={styles.sectionTitle}>Carousel Examples</Text>
+        </View>
+        <Text style={styles.sectionDescription}>
+          Different approaches to building carousels
+        </Text>
+
+        <View style={styles.cardsRow}>
+          <NavigationCard
+            icon="📱"
+            title="Basic Carousel"
+            description="Simple scroll-based"
+            onPress={navigateToCarouselScreen}
+            iconBgStyle={styles.bgPrimary}
+          />
+          <NavigationCard
+            icon="📋"
+            title="FlatList"
+            description="Optimized for lists"
+            onPress={navigateToCarouselFlatListScreen}
+            iconBgStyle={styles.bgSecondary}
+          />
+          <NavigationCard
+            icon="✨"
+            title="Reanimated"
+            description="Smooth animations"
+            onPress={navigateToCarouselReanimatedScreen}
+            iconBgStyle={styles.bgAccent}
+          />
+          <NavigationCard
+            icon="📦"
+            title="RNRC Library"
+            description="Production-ready"
+            onPress={navigateToCarouselWithLibrary}
+            iconBgStyle={styles.bgSuccess}
+            badge="REC"
+            badgeStyle={styles.badgeWarning}
+          />
+        </View>
+      </View>
     </ScrollView>
   );
 });

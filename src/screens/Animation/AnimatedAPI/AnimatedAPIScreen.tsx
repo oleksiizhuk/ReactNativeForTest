@@ -1,5 +1,5 @@
 import React from 'react';
-import { FadeInView } from './Components/FadeInView';
+import { FadeInView } from './components/FadeInView';
 import { ScrollView, Text } from 'react-native';
 import { useStyles } from './AnimatedAPIScreen.styles';
 
