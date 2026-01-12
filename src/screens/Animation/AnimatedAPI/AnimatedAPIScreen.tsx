@@ -1,8 +1,10 @@
-import React from 'react'
-import { FadeInView } from './Components/FadeInView'
-import { ScrollView, StyleSheet, Text } from 'react-native'
+import React from 'react';
+import { FadeInView } from './Components/FadeInView';
+import { ScrollView, Text } from 'react-native';
+import { useStyles } from './AnimatedAPIScreen.styles';
 
 export const AnimatedAPIScreen = () => {
+  const styles = useStyles();
   return (
     <ScrollView style={styles.container}>
       <FadeInView>
@@ -16,11 +18,5 @@ export const AnimatedAPIScreen = () => {
         <Text>FadeInView</Text>
       </FadeInView>
     </ScrollView>
-  )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-  },
-})
+  );
+};

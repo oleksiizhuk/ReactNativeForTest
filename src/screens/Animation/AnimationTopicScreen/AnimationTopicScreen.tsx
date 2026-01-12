@@ -1,12 +1,14 @@
 import React, { memo, useCallback } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from '../../../components/Atoms/Button/Button';
 import { Title } from '../../../components/Atoms/Title/Title';
+import { useStyles } from './AnimationTopicScreen.styles.ts';
 
 export const AnimationTopicScreen = memo(() => {
   const navigation = useNavigation<any>();
 
+  const styles = useStyles();
   const navigateToAnimatedAPI = useCallback(() => {
     return navigation.navigate('AnimatedAPIScreen');
   }, [navigation]);
@@ -93,14 +95,4 @@ export const AnimationTopicScreen = memo(() => {
       />
     </ScrollView>
   );
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 16,
-  },
-  buttonContainer: {
-    marginBottom: 16,
-  },
 });
