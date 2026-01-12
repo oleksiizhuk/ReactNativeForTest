@@ -30,6 +30,7 @@ import { CarouselFlatListScreen } from '../screens/Animation/CarouselFlatListScr
 import { CarouselReanimatedScreen } from '../screens/Animation/CarouselReanimatedScreen/CarouselReanimatedScreen'
 import { CarouselWithLibrary } from '../screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
 import { ReactAnimationVsReanimated } from '../screens/Animation/ReactAnimationVsReanimated';
+import { GestureHandlerExample } from '../screens/Animation/GestureHandlerExample';
 
 const Stack = createStackNavigator<any>()
 
@@ -65,6 +66,10 @@ export const ApplicationNavigator = () => {
           <Stack.Screen
             name="ReactAnimationVsReanimated"
             component={ReactAnimationVsReanimated}
+          />
+          <Stack.Screen
+            name="GestureHandlerExample"
+            component={GestureHandlerExample}
           />
           <Stack.Screen name="HookTopicScreen" component={HookTopicScreen} />
           <Stack.Screen

@@ -39,6 +39,10 @@ export const AnimationTopicScreen = memo(() => {
     return navigation.navigate('ReactAnimationVsReanimated');
   }, [navigation]);
 
+  const navigateToGestureHandlerExample = useCallback(() => {
+    return navigation.navigate('GestureHandlerExample');
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'Animation'} />
@@ -80,6 +84,11 @@ export const AnimationTopicScreen = memo(() => {
       <Button
         text={'ReactAnimationVsReanimated'}
         onPress={navigateToReactAnimationVsReanimated}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'navigateToGestureHandlerExample'}
+        onPress={navigateToGestureHandlerExample}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
