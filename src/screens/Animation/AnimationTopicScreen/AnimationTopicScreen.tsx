@@ -1,39 +1,43 @@
-import React, { memo, useCallback } from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-import { Button } from '../../../components/Atoms/Button/Button'
-import { Title } from '../../../components/Atoms/Title/Title'
+import React, { memo, useCallback } from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Button } from '../../../components/Atoms/Button/Button';
+import { Title } from '../../../components/Atoms/Title/Title';
 
 export const AnimationTopicScreen = memo(() => {
-  const navigation = useNavigation<any>()
+  const navigation = useNavigation<any>();
 
   const navigateToAnimatedAPI = useCallback(() => {
-    return navigation.navigate('AnimatedAPIScreen')
-  }, [navigation])
+    return navigation.navigate('AnimatedAPIScreen');
+  }, [navigation]);
 
   const navigateToLayoutAnimation = useCallback(() => {
-    return navigation.navigate('LayoutAnimationScreen')
-  }, [navigation])
+    return navigation.navigate('LayoutAnimationScreen');
+  }, [navigation]);
 
   const navigateToReanimated = useCallback(() => {
-    return navigation.navigate('ReanimatedScreen')
-  }, [navigation])
+    return navigation.navigate('ReanimatedScreen');
+  }, [navigation]);
 
   const navigateToCarouselScreen = useCallback(() => {
-    return navigation.navigate('CarouselScreen')
-  }, [navigation])
+    return navigation.navigate('CarouselScreen');
+  }, [navigation]);
 
   const navigateToCarouselFlatListScreen = useCallback(() => {
-    return navigation.navigate('CarouselFlatListScreen')
-  }, [navigation])
+    return navigation.navigate('CarouselFlatListScreen');
+  }, [navigation]);
 
   const navigateToCarouselReanimatedScreen = useCallback(() => {
-    return navigation.navigate('CarouselReanimatedScreen')
-  }, [navigation])
+    return navigation.navigate('CarouselReanimatedScreen');
+  }, [navigation]);
 
   const navigateToCarouselWithLibrary = useCallback(() => {
-    return navigation.navigate('CarouselWithLibrary')
-  }, [navigation])
+    return navigation.navigate('CarouselWithLibrary');
+  }, [navigation]);
+
+  const navigateToReactAnimationVsReanimated = useCallback(() => {
+    return navigation.navigate('ReactAnimationVsReanimated');
+  }, [navigation]);
 
   return (
     <ScrollView style={styles.container}>
@@ -73,9 +77,14 @@ export const AnimationTopicScreen = memo(() => {
         onPress={navigateToCarouselWithLibrary}
         styleContainer={styles.buttonContainer}
       />
+      <Button
+        text={'ReactAnimationVsReanimated'}
+        onPress={navigateToReactAnimationVsReanimated}
+        styleContainer={styles.buttonContainer}
+      />
     </ScrollView>
-  )
-})
+  );
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -85,4 +94,4 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginBottom: 16,
   },
-})
+});

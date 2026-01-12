@@ -29,6 +29,7 @@ import { CarouselScreen } from '../screens/Animation/CarouselScreen/CarouselScre
 import { CarouselFlatListScreen } from '../screens/Animation/CarouselFlatListScreen/CarouselFlatListScreen'
 import { CarouselReanimatedScreen } from '../screens/Animation/CarouselReanimatedScreen/CarouselReanimatedScreen'
 import { CarouselWithLibrary } from '../screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
+import { ReactAnimationVsReanimated } from '../screens/Animation/ReactAnimationVsReanimated';
 
 const Stack = createStackNavigator<any>()
 
@@ -61,6 +62,10 @@ export const ApplicationNavigator = () => {
             component={LayoutAnimationScreen}
           />
           <Stack.Screen name="ReanimatedScreen" component={ReanimatedScreen} />
+          <Stack.Screen
+            name="ReactAnimationVsReanimated"
+            component={ReactAnimationVsReanimated}
+          />
           <Stack.Screen name="HookTopicScreen" component={HookTopicScreen} />
           <Stack.Screen
             name="UseDeferredValueScreen"
@@ -93,5 +98,5 @@ export const ApplicationNavigator = () => {
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
-  )
+  );
 }
