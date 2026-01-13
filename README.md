@@ -95,3 +95,16 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# Debugging React Native
+ - you can use [React Native Debugger](https://github.com/jhen0409/react-native-debugger)
+ - or [Reactotron](https://github.com/infinitered/reactotron)
+
+
+# Reactotron
+### How to work with reactotron
+- brew install --cask reactotron
+- Open Reactotron: CLI open -a Reactotron
+
+# Configuring Reactotron
+ - you can configure reactotron in `src/config/ReactotronConfig.ts`
