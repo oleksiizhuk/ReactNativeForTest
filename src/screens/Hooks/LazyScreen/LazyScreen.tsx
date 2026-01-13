@@ -1,17 +1,19 @@
-import React, { memo, useState, useCallback, lazy, Suspense } from 'react'
-import { ScrollView, StyleSheet, Text } from 'react-native'
-import { CheckBox } from '../../../components/Atoms/CheckBox/CheckBox'
+import React, { memo, useState, useCallback, lazy, Suspense } from 'react';
+import { ScrollView, Text } from 'react-native';
+import { CheckBox } from '@components/Atoms/CheckBox/CheckBox';
+import { useStyles } from './LazyScreen.styles';
 // import BigComponent from '../../../components/Atoms/BigComponent/BigComponent';
 const BigComponent = lazy<React.ComponentType>(() =>
   delayForDemo(import('../../../components/Atoms/BigComponent/BigComponent')),
-)
+);
 
 export const LazyScreen = memo(() => {
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(false);
+  const styles = useStyles();
 
   const toggleCheckBox = useCallback(() => {
     setIsActive(prevState => !prevState);
-  }, [])
+  }, []);
 
   return (
     <ScrollView style={styles.container}>
@@ -26,14 +28,8 @@ export const LazyScreen = memo(() => {
         </Suspense>
       )}
     </ScrollView>
-  )
-})
-
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 16,
-  },
-})
+  );
+});
 
 function delayForDemo(promise: any) {
   return new Promise<void>(resolve => {

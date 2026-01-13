@@ -32,6 +32,7 @@ export const BoardTemplate = memo<BoardTemplateProps>(
           <Desk title={'In Progress'} itemList={inProgressList} />
           <Desk title={'Done'} itemList={doneList} />
         </View>
+        {/*// @ts-ignore*/}
         <BottomSheet bottomSheetModalRef={bottomSheetModalRef}>
           <View style={styles.BottomSheetContainer}>
             <View style={styles.content}>
@@ -46,6 +47,6 @@ export const BoardTemplate = memo<BoardTemplateProps>(
           </View>
         </BottomSheet>
       </View>
-    )
+    );
   },
 )
