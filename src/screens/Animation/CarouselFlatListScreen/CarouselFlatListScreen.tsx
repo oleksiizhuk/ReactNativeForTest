@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import { View, Text, Animated } from 'react-native';
 import { ITEM_WIDTH, ITEM_SPACING } from './CarouselFlatListScreen.constants';
 import { useStyles } from './CarouselFlatListScreen.styles';
 

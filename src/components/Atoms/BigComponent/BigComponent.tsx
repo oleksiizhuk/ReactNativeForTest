@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { City } from '../../../constant/city'
 import { Text, View } from 'react-native'
 
-const BigComponent = () => {
+export const BigComponent = () => {
   const [items] = useState<string[]>([...City, ...City, ...City])
 
   return (
@@ -15,5 +15,3 @@ const BigComponent = () => {
     </View>
   )
 }
-
-export default BigComponent

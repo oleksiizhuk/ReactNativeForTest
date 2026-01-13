@@ -1,13 +1,8 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { CartProps } from './Cart.types';
 
-interface CartProps {
-  bg: string
-  type: string
-  cardNumber: string
-  name: string
-}
-const height = Dimensions.get('window').height
+const height = Dimensions.get('window').height;
 
 export const Cart = ({ bg, type, cardNumber, name }: CartProps) => {
   return (
@@ -22,8 +17,8 @@ export const Cart = ({ bg, type, cardNumber, name }: CartProps) => {
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   creditCard: {
@@ -65,4 +60,4 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'blue',
   },
-})
+});

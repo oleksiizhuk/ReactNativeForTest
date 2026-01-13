@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import useTheme from '../../../hooks/useTheme/useTheme';
+import { useTheme } from '@hooks/useTheme/useTheme';
 
 export const useStyles = () => {
   const { Colors } = useTheme();
@@ -69,16 +69,6 @@ export const useStyles = () => {
       marginVertical: 20,
       marginHorizontal: 20,
     },
-    // Color utilities for card icons
-    bgPrimary: { backgroundColor: Colors.primaryLight },
-    bgSecondary: { backgroundColor: Colors.secondaryLight },
-    bgAccent: { backgroundColor: Colors.accentLight },
-    bgSuccess: { backgroundColor: Colors.successLight },
-    bgWarning: { backgroundColor: Colors.warningLight },
-    bgPink: { backgroundColor: Colors.pinkLight },
-    badgePrimary: { backgroundColor: Colors.primaryLight },
-    badgeSuccess: { backgroundColor: Colors.successLight },
-    badgeWarning: { backgroundColor: Colors.warningLight },
     buttonContainer: {
       marginBottom: 16,
     },

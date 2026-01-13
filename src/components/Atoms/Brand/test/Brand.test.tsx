@@ -13,8 +13,8 @@ test('render correctly', () => {
 
   render(component)
 
-  const wrapper = screen.getByTestId('brand-img-wrapper')
-  const img = screen.getByTestId('brand-img')
+  const wrapper = screen.getByTestId('Brand-img-wrapper')
+  const img = screen.getByTestId('Brand-img')
 
   expect(wrapper.props.style.height).toBe(200)
   expect(wrapper.props.style.width).toBe(200)

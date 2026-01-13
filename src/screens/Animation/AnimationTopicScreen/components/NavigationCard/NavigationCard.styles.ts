@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import useTheme from '../../../../../hooks/useTheme/useTheme';
+import { useTheme } from '@hooks/useTheme/useTheme';
 
 const { width } = Dimensions.get('window');
 

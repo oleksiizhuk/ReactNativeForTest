@@ -5,7 +5,7 @@
  * That allows to change them more easily later on.
  */
 
-import { ThemeNavigationColors } from '../../@types/theme'
+import { ThemeNavigationColors } from '@/types/theme'
 
 /**
  * Colors
@@ -30,6 +30,10 @@ export const Colors = {
   background: '#f5f5f5',
   card: '#ffffff',
   border: '#e0e0e0',
+  text: '#1e293b',
+  textMuted: '#64748b',
+  accent: '#06b6d4',
+  cardBorder: '#e2e8f0',
   // Animation Theme Colors
   animation: {
     background: '#f8fafc',

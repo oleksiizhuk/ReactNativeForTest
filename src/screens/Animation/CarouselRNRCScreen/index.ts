@@ -1,0 +1,1 @@
+export { CarouselWithLibrary } from './CarouselRNRCScreen';
