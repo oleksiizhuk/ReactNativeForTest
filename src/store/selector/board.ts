@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { AppState } from '../types'
+import { AppState } from '@store/types.ts'
 
 const selectBoard = (state: AppState) => state.board
 

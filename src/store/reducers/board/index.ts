@@ -21,6 +21,5 @@ const slice = createSlice({
   },
 })
 
-// export const { addItem, deleteTodoItemById } = slice.actions
 
 export default slice.reducer

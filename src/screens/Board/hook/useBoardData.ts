@@ -1,6 +1,6 @@
-import { DestItemType } from '../../../components/Template/Board/BoardTemplate.type'
+import { DestItemType } from '@components/Template/Board/BoardTemplate.type.ts'
 import { useSelector } from 'react-redux'
-import { selectRecommendation } from '../../../store/selector/board'
+import { selectRecommendation } from '@store/selector/board.ts'
 
 export const useBoardData = () => {
   const recommendationList = useSelector(selectRecommendation)

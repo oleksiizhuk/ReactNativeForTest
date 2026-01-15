@@ -11,15 +11,15 @@ export const useExampleData = () => {
   const { t } = useTranslation(['example', 'welcome'])
   const dispatch = useDispatch()
 
-  const [fetchOne, { data, isSuccess, isLoading, isFetching }] =
-    useLazyFetchOneQuery()
+  // const [fetchOne, { data, isSuccess, isLoading, isFetching }] =
+  //   useLazyFetchOneQuery()
 
-  useEffect(() => {
-    if (isSuccess && data?.name) {
-      // @ts-ignore
-      Alert.alert(t('Example:helloUser', { name: data.name }))
-    }
-  }, [isSuccess, data, t])
+  // useEffect(() => {
+  //   if (isSuccess && data?.name) {
+  //     // @ts-ignore
+  //     Alert.alert(t('Example:helloUser', { name: data.name }))
+  //   }
+  // }, [isSuccess, data, t])
 
   const onChangeTheme = ({ theme, darkMode }: Partial<ThemeState>) => {
     dispatch(changeTheme({ theme, darkMode }))
@@ -31,8 +31,8 @@ export const useExampleData = () => {
   return {
     onChangeTheme,
     onChangeLanguage,
-    fetchOne,
-    isFetching,
-    isLoading,
-  }
+    // fetchOne,
+    // isFetching,
+    // isLoading,
+  };
 }

@@ -1,5 +1,4 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
 import {
   persistReducer,
   persistStore,
@@ -11,9 +10,9 @@ import {
   REGISTER,
   Storage,
 } from 'redux-persist';
-import { api } from '../services/api';
+import { storage } from '@services/storageService/StorageService';
 import theme from './reducers/theme';
-import auth from './reducers/auth';
+import { auth } from './reducers/auth';
 import todo from './reducers/todo';
 import board from './reducers/board';
 
@@ -22,27 +21,9 @@ const reducers = combineReducers({
   auth,
   todo,
   board,
-  [api.reducerPath]: api.reducer,
 });
 
-// const storage = new MMKV()
-const storage = {
-  obj: {} as Record<string, any>,
-
-  set(key: string, value: any) {
-    console.log('key = ', key);
-    console.log('value = ', value);
-    this.obj[key] = value;
-  },
-
-  getString(key: string): any {
-    return this.obj[key];
-  },
-
-  delete(key: string) {
-    delete this.obj[key];
-  },
-};
+// MMKV storage adapter for redux-persist
 export const reduxStorage: Storage = {
   setItem: (key, value) => {
     storage.set(key, value);
@@ -50,10 +31,10 @@ export const reduxStorage: Storage = {
   },
   getItem: key => {
     const value = storage.getString(key);
-    return Promise.resolve(value);
+    return Promise.resolve(value ?? null);
   },
   removeItem: key => {
-    storage.delete(key);
+    storage.remove(key);
     return Promise.resolve();
   },
 };
@@ -68,19 +49,17 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: getDefaultMiddleware => {
-    const middlewares = getDefaultMiddleware({
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(api.middleware);
-
-    return middlewares;
-  },
+    }),
 });
 
 const persistor = persistStore(store);
 
-setupListeners(store.dispatch);
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export { store, persistor };

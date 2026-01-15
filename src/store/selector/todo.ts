@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { AppState } from '../types'
+import { AppState } from '@store/types.ts'
 
 const selectTodo = (state: AppState) => state.todo
 
