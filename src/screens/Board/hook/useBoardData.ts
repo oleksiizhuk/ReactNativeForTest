@@ -1,4 +1,4 @@
-import { DestItemType } from '@components/Template/Board/BoardTemplate.type.ts'
+import { DestItemType } from '@screens/Board/BoardTemplate/BoardTemplate.type.ts'
 import { useSelector } from 'react-redux'
 import { selectRecommendation } from '@store/selector/board.ts'
 

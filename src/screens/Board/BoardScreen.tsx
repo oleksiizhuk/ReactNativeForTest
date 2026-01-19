@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoardTemplate } from '../../components/Template/Board/BoardTemplate'
+import { BoardTemplate } from '@screens/Board/BoardTemplate/BoardTemplate'
 import { useBoardData } from './hook/useBoardData'
 
 export const BoardScreen = () => {

@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectTodoData } from '../../../store/selector/todo'
 import { addItem, deleteTodoItemById } from '../../../store/reducers/todo'
-import { TodoItemType } from '../../../components/Template/Todo/types'
+import { TodoItemType } from 'src/screens/Todo/template/types.ts'
 import uuid from 'react-native-uuid'
 
 export const useTodo = () => {

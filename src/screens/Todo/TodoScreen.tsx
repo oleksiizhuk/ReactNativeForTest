@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoTemplate } from '../../components/Template/Todo/TodoTemplate'
+import { TodoTemplate } from 'src/screens/Todo/template/TodoTemplate.tsx'
 import { useTodo } from './hooks/useTodo'
 
 export const TodoScreen = () => {

@@ -1,4 +1,4 @@
-import { TodoItemType } from '@components/Template/Todo/types.ts'
+import { TodoItemType } from '@screens/Todo/template/types.ts'
 
 export interface TodoState {
   data: TodoItemType[]

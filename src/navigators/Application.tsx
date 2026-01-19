@@ -7,30 +7,30 @@ import {
   NavigationContainer,
   useNavigationContainerRef,
 } from '@react-navigation/native'
-import { StartupScreen, CameraScreen } from '../screens'
+import { StartupScreen, CameraScreen } from '@/screens'
 import { TopicScreen } from '../screens/Topic/TopicScreen'
-import { useTheme } from '../hooks'
+import { useTheme } from '@/hooks'
 import { MainNavigator } from './Main'
-import { AnimationTopicScreen } from '../screens/Animation/AnimationTopicScreen/AnimationTopicScreen'
-import { AnimatedAPIScreen } from '../screens/Animation/AnimatedAPI/AnimatedAPIScreen'
-import { ReanimatedScreen } from '../screens/Animation/ReanimatedScreen/ReanimatedScreen'
-import { LayoutAnimationScreen } from '../screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen'
+import { AnimationTopicScreen } from '@screens/Animation/AnimationTopicScreen/AnimationTopicScreen'
+import { AnimatedAPIScreen } from '@screens/Animation/AnimatedAPI/AnimatedAPIScreen'
+import { ReanimatedScreen } from '@screens/Animation/ReanimatedScreen/ReanimatedScreen'
+import { LayoutAnimationScreen } from '@screens/Animation/LayoutAnimationScreen/LayoutAnimationScreen'
 import { UseDeferredValueScreen } from '../screens/Hooks/UseDeferredValueScreen/UseDeferredValue'
-import { HookTopicScreen } from '../screens/Hooks/HookTopicScreen/HookTopicScreen'
+import { HookTopicScreen } from '@screens/Hooks/HookTopicScreen'
 import { UseTransitionScreen } from '../screens/Hooks/UseTransitionScreen/useTransition'
 import { UseIDScreen } from '../screens/Hooks/UseIDScreen/useID'
-import { LazyScreen } from '../screens/Hooks/LazyScreen/LazyScreen'
+import { LazyScreen } from '@screens/Hooks/LazyScreen'
 import { JSTopicScreen } from '../screens/JS/JSTopicScreen/JSTopicScreen'
 import { JSAsynkScreen } from '../screens/JS/JSAsynkScreen/JSAsynkScreen'
 import { JSHTMLTreeScreen } from '../screens/JS/JSHTMLTreeScreen/JSHTMLTreeScreen'
 import { TodoScreen } from '../screens/Todo/TodoScreen'
-import { BoardScreen } from '../screens/Board/BoardScreen'
-import { CarouselScreen } from '../screens/Animation/CarouselScreen/CarouselScreen'
-import { CarouselFlatListScreen } from '../screens/Animation/CarouselFlatListScreen/CarouselFlatListScreen'
-import { CarouselReanimatedScreen } from '../screens/Animation/CarouselReanimatedScreen/CarouselReanimatedScreen'
-import { CarouselWithLibrary } from '../screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
-import { ReactAnimationVsReanimated } from '../screens/Animation/ReactAnimationVsReanimated';
-import { GestureHandlerExample } from '../screens/Animation/GestureHandlerExample';
+import { BoardScreen } from '@screens/Board/BoardScreen'
+import { CarouselScreen } from '@screens/Animation/CarouselScreen/CarouselScreen'
+import { CarouselFlatListScreen } from '@screens/Animation/CarouselFlatListScreen/CarouselFlatListScreen'
+import { CarouselReanimatedScreen } from '@screens/Animation/CarouselReanimatedScreen/CarouselReanimatedScreen'
+import { CarouselWithLibrary } from '@screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
+import { ReactAnimationVsReanimated } from '@screens/Animation/ReactAnimationVsReanimated';
+import { GestureHandlerExample } from '@screens/Animation/GestureHandlerExample';
 
 const Stack = createStackNavigator<any>()
 

@@ -1,13 +1,13 @@
 import React, { memo, useRef, useCallback } from 'react'
 import { View, Text } from 'react-native'
-import { Desk } from '../../Organisms/Desk/Desk'
-import { TaskItem } from '../../Molecules/TaskItem/TaskItem'
-import { HorizontalList } from '../../Molecules/HorizontalList/HorizontalList'
-import { BottomSheet } from '../../Molecules/BottomSheet/BottomSheet'
+import { Desk } from '@components/Organisms/Desk/Desk.tsx'
+import { TaskItem } from '@components/Molecules/TaskItem/TaskItem.tsx'
+import { HorizontalList } from '@components/Molecules/HorizontalList/HorizontalList.tsx'
+import { BottomSheet } from '@components/Molecules/BottomSheet/BottomSheet.tsx'
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
-import { Button } from '../../Atoms/Button/Button'
-import { BoardTemplateProps } from './BoardTemplate.type'
-import { BoardTemplateStyles } from './BoardTemplate.styles'
+import { Button } from '@components/Atoms/Button/Button.tsx'
+import { BoardTemplateProps } from '@screens/Board/BoardTemplate/BoardTemplate.type.ts'
+import { BoardTemplateStyles } from '@screens/Board/BoardTemplate/BoardTemplate.styles.ts'
 
 export const BoardTemplate = memo<BoardTemplateProps>(
   ({ waitingList, inProgressList, recommendationList, doneList }) => {

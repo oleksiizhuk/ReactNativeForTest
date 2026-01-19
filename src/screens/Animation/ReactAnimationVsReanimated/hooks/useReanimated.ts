@@ -13,7 +13,7 @@ import { ANIMATION_DURATION } from '../ReactAnimationVsReanimated.constant';
 export const useReanimated = () => {
   const reanimatedTranslateX = useSharedValue(0);
   const reanimatedRotation = useSharedValue(0);
-  // Start Reanimated animation
+  // Start Reanimated Animation
   useEffect(() => {
     reanimatedTranslateX.value = withRepeat(
       withSequence(

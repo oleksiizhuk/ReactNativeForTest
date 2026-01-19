@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { Text, View } from 'react-native'
-import { styles } from '../../Template/Todo/styles'
+import { styles } from '@screens/Todo/template/styles.ts'
 import { Input } from '../../Atoms/Input/Input'
 import { Button, ButtonType } from '../../Atoms/Button/Button'
 
