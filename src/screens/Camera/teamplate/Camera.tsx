@@ -1,5 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { memo } from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { memo } from 'react';
 
 export const CameraTemplate = memo(({ takePicture }: any) => {
   return (
@@ -8,8 +8,8 @@ export const CameraTemplate = memo(({ takePicture }: any) => {
         <Text style={styles.text}>Take Picture</Text>
       </TouchableOpacity>
     </View>
-  )
-})
+  );
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 20,
   },
-})
+});
