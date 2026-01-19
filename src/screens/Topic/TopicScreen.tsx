@@ -27,6 +27,10 @@ export const TopicScreen = memo(() => {
     return navigation.navigate('BoardScreen')
   }, [navigation])
 
+  const navigateToClassLifeCycleScreen = useCallback(() => {
+    return navigation.navigate('ClassLifeCycleScreen');
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'Topics'} />
@@ -55,8 +59,13 @@ export const TopicScreen = memo(() => {
         onPress={navigateToBoard}
         styleContainer={styles.buttonContainer}
       />
+      <Button
+        text={'ClassLifeCycleScreen'}
+        onPress={navigateToClassLifeCycleScreen}
+        styleContainer={styles.buttonContainer}
+      />
     </ScrollView>
-  )
+  );
 })
 
 const styles = StyleSheet.create({

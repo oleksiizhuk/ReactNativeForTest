@@ -31,6 +31,7 @@ import { CarouselReanimatedScreen } from '@screens/Animation/CarouselReanimatedS
 import { CarouselWithLibrary } from '@screens/Animation/CarouselRNRCScreen/CarouselRNRCScreen'
 import { ReactAnimationVsReanimated } from '@screens/Animation/ReactAnimationVsReanimated';
 import { GestureHandlerExample } from '@screens/Animation/GestureHandlerExample';
+import { ClassLifeCycleScreen } from '@screens/ClassLifeCycle';
 
 const Stack = createStackNavigator<any>()
 
@@ -99,6 +100,10 @@ export const ApplicationNavigator = () => {
           <Stack.Screen
             name="CarouselReanimatedScreen"
             component={CarouselReanimatedScreen}
+          />
+          <Stack.Screen
+            name="ClassLifeCycleScreen"
+            component={ClassLifeCycleScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

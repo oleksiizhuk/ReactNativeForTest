@@ -1,12 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { View, FlatList, ListRenderItemInfo } from 'react-native';
-import { TodoItem } from '@components/Molecules';
-import {
-  TodoTemplateProps,
-  TodoItemType,
-} from 'src/screens/Todo/template/types.ts';
-import { TodoHeader } from '@components/Molecules';
-import { styles } from 'src/screens/Todo/template/styles.ts';
+import { TodoItem, TodoHeader } from '@components/Molecules';
+import { TodoTemplateProps, TodoItemType } from './types';
+import { styles } from './styles';
 
 export const TodoTemplate = memo(
   ({
