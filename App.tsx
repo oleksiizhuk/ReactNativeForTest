@@ -11,6 +11,21 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import * as Sentry from '@sentry/react-native';
+
+Sentry.init({
+  dsn: 'https://1fbdda9faa291659f91370a7a9c7ce8e@o4510743126671360.ingest.de.sentry.io/4510743130079312',
+
+  // Adds more context data to events (IP address, cookies, user, etc.)
+  // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
+  sendDefaultPii: true,
+
+  // Enable Logs
+  enableLogs: true,
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,7 +40,6 @@ function App() {
 
 function AppContent() {
   const safeAreaInsets = useSafeAreaInsets();
-
   return (
     <View style={styles.container}>
       <NewAppScreen
@@ -42,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Sentry.wrap(App);
