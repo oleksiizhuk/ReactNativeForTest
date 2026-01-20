@@ -11,7 +11,7 @@ const DEFAULT_CONFIG: AxiosConfig = {
   },
 };
 
-export class AxiosService implements IAxiosService {
+class AxiosService implements IAxiosService {
   private client: AxiosInstance;
 
   constructor(config: Partial<AxiosConfig> = {}, authStore: IAuthStore) {
@@ -42,3 +42,5 @@ export class AxiosService implements IAxiosService {
     return this.client.delete<T>(url).then(res => res.data);
   }
 }
+
+export { AxiosService }

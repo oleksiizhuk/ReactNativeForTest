@@ -4,6 +4,7 @@ import {
   LoginResponse,
   RefreshTokenRequest,
   RefreshTokenResponse,
+  RegistrationRequest,
 } from '../types';
 import { IAxiosService } from '@services/axiosService';
 
@@ -26,7 +27,7 @@ export class AuthApi implements IAuthApi {
     return this.axiosService.post(`/${AUTH}/logout`);
   }
 
-  register(data: LoginRequest & { name: string }): Promise<LoginResponse> {
-    return this.axiosService.post<LoginResponse>(`/${AUTH}/register`, data);
+  registration(data: RegistrationRequest): Promise<LoginResponse> {
+    return this.axiosService.post<LoginResponse>(`/${AUTH}/registration`, data);
   }
 }

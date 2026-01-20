@@ -1,9 +1,16 @@
-
-
 // Auth
 export interface LoginRequest {
   email: string;
   password: string;
+}
+
+export interface RegistrationRequest {
+  firstName: string;
+  lastName: string;
+  age: number;
+  email: string;
+  password: string;
+  passwordConfirm: string;
 }
 
 export interface AuthTokens {
@@ -27,8 +34,14 @@ export interface RefreshTokenResponse {
 // User
 export interface User {
   id: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  name: string;
+  age: number;
+  password: number;
+  shoppingCartId: null;
+  createdAt: string;
+  updatedAt: string;
 }
 
 // API Response wrapper
@@ -49,7 +62,7 @@ export interface IAuthApi {
   login(data: LoginRequest): Promise<LoginResponse>;
   refreshToken(data: RefreshTokenRequest): Promise<RefreshTokenResponse>;
   logout(): Promise<void>;
-  register(data: LoginRequest & { name: string }): Promise<LoginResponse>;
+  registration(data: RegistrationRequest): Promise<LoginResponse>;
 }
 
 export interface IUsersApi {

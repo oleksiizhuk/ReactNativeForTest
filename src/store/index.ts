@@ -10,7 +10,7 @@ import {
   REGISTER,
   Storage,
 } from 'redux-persist';
-import { storage } from '@services/storageService/StorageService';
+import { storageMMKV } from '@services/storageService';
 import theme from './reducers/theme';
 import { auth } from './reducers/auth';
 import todo from './reducers/todo';
@@ -26,15 +26,15 @@ const reducers = combineReducers({
 // MMKV storage adapter for redux-persist
 export const reduxStorage: Storage = {
   setItem: (key, value) => {
-    storage.set(key, value);
+    storageMMKV.set(key, value);
     return Promise.resolve(true);
   },
   getItem: key => {
-    const value = storage.getString(key);
+    const value = storageMMKV.getString(key);
     return Promise.resolve(value ?? null);
   },
   removeItem: key => {
-    storage.remove(key);
+    storageMMKV.remove(key);
     return Promise.resolve();
   },
 };

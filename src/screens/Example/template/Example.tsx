@@ -170,8 +170,22 @@ export const ExampleTemplate = ({
 
         <View style={[Layout.row, Gutters.smallTMargin]}>
           <TouchableOpacity
-            style={[Common.button.circle, Gutters.regularBMargin, Gutters.smallRMargin]}
-            onPress={() => navigation.navigate('Topic')}
+            style={[
+              Common.button.circle,
+              Gutters.regularBMargin,
+              Gutters.smallRMargin,
+            ]}
+            onPress={() => navigation.navigate('Main', { screen: 'Topic' })}
+          >
+            <Image source={Images.icons.colors} style={styles.iconBackground} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              Common.button.circle,
+              Gutters.regularBMargin,
+              Gutters.smallRMargin,
+            ]}
+            onPress={() => navigation.navigate('Registration')}
           >
             <Image source={Images.icons.colors} style={styles.iconBackground} />
           </TouchableOpacity>

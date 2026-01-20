@@ -1,2 +1,2 @@
-export * from 'src/services/axiosService/axiosService.ts';
+export * from './axiosService';
 export * from './types';

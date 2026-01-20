@@ -1,4 +1,4 @@
-import { StorageService } from '@services/storageService/StorageService';
+import { StorageService } from '@services/storageService';
 import { IAuthStore } from './types';
 import { AuthTokens } from '@services/apiService';
 
@@ -7,7 +7,7 @@ const AUTH_KEYS = {
   REFRESH_TOKEN: 'refreshToken',
 } as const;
 
-export class AuthStore extends StorageService implements IAuthStore {
+class AuthStore extends StorageService implements IAuthStore {
   getAccessToken = async (): Promise<string | null> => {
     return this.get(AUTH_KEYS.ACCESS_TOKEN) ?? null;
   };
@@ -31,4 +31,6 @@ export class AuthStore extends StorageService implements IAuthStore {
   };
 }
 
-export const authStore = new AuthStore();
+const authStore = new AuthStore();
+
+export { authStore, AuthStore };
