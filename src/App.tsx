@@ -1,28 +1,28 @@
 import React, { ErrorInfo } from 'react';
 import 'react-native-gesture-handler';
+import * as Sentry from '@sentry/react-native';
 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { store, persistor } from './store';
 import { ApplicationNavigator } from './navigators/Application';
-import { ErrorBoundary } from './components/Molecules';
+import { ErrorBoundary } from '@components/Molecules';
 import './translations';
 
-/**
- * Global error handler - this is where you'd send errors to Sentry
- * Example with Sentry:
- *   import * as Sentry from '@sentry/react-native';
- *   Sentry.captureException(error);
- */
+Sentry.init({
+  dsn: 'https://1fbdda9faa291659f91370a7a9c7ce8e@o4510743126671360.ingest.de.sentry.io/4510743130079312',
+  sendDefaultPii: true,
+  enableLogs: true,
+  debug: __DEV__, // Enable debug mode in development to see Sentry logs
+});
+
 const handleGlobalError = (error: Error, errorInfo: ErrorInfo) => {
-  // Log to your error tracking service (Sentry, Crashlytics, etc.)
   console.error('Global Error:', error.message);
   console.error('Component Stack:', errorInfo.componentStack);
-
-  // Example: Sentry.captureException(error, { extra: { componentStack: errorInfo.componentStack } });
+  Sentry.captureException(error, { extra: { componentStack: errorInfo.componentStack } });
 };
 
-export const App = () => {
+const AppComponent = () => {
   return (
     <ErrorBoundary onError={handleGlobalError}>
       <Provider store={store}>
@@ -33,3 +33,5 @@ export const App = () => {
     </ErrorBoundary>
   );
 };
+
+export const App = Sentry.wrap(AppComponent);

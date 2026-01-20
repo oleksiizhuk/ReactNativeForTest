@@ -12,6 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 import i18next from 'i18next';
 import { Brand } from '@components/Atoms';
 import { useTheme } from '@hooks/useTheme';
+import * as Sentry from '@sentry/react-native';
 import { ExampleStyles } from './styles';
 import { ThemeState } from '@store/reducers/theme/types.ts';
 
@@ -66,93 +67,40 @@ export const ExampleTemplate = ({
       >
         <View style={[Layout.absolute, styles.absolute]} />
         <Image
-          style={[
-            Layout.absolute,
-            {
-              bottom: '-30%',
-              left: 0,
-            },
-          ]}
+          style={[Layout.absolute, styles.sparkleBottomLeft]}
           source={Images.sparkles.bottomLeft}
           resizeMode={'contain'}
         />
-        <View
-          style={[
-            Layout.absolute,
-            {
-              height: 300,
-              width: 300,
-              transform: [{ translateY: 40 }],
-            },
-          ]}
-        >
+        <View style={[Layout.absolute, styles.brandContainer]}>
           <Brand height={300} width={300} />
         </View>
         <Image
-          style={[
-            Layout.absolute,
-            Layout.fill,
-            {
-              top: 0,
-              left: 0,
-            },
-          ]}
+          style={[Layout.absolute, Layout.fill, styles.sparkleTopLeft]}
           source={Images.sparkles.topLeft}
           resizeMode={'contain'}
         />
         <Image
-          style={[
-            Layout.absolute,
-            {
-              top: '-5%',
-              right: 0,
-            },
-          ]}
+          style={[Layout.absolute, styles.sparkleTop]}
           source={Images.sparkles.top}
           resizeMode={'contain'}
         />
         <Image
-          style={[
-            Layout.absolute,
-            {
-              top: '15%',
-              right: 20,
-            },
-          ]}
+          style={[Layout.absolute, styles.sparkleTopRight]}
           source={Images.sparkles.topRight}
           resizeMode={'contain'}
         />
         <Image
-          style={[
-            Layout.absolute,
-            {
-              bottom: '-10%',
-              right: 0,
-            },
-          ]}
+          style={[Layout.absolute, styles.sparkleRight]}
           source={Images.sparkles.right}
           resizeMode={'contain'}
         />
-
         <Image
-          style={[
-            Layout.absolute,
-            {
-              top: '75%',
-              right: 0,
-            },
-          ]}
+          style={[Layout.absolute, styles.sparkleBottom]}
           source={Images.sparkles.bottom}
           resizeMode={'contain'}
         />
         <Image
-          style={[
-            Layout.absolute,
-            {
-              top: '60%',
-              right: 0,
-            },
-          ]}
+          style={[Layout.absolute, styles.sparkleBottomRight]}
           source={Images.sparkles.bottomRight}
           resizeMode={'contain'}
         />
@@ -220,12 +168,18 @@ export const ExampleTemplate = ({
           </TouchableOpacity>
         </View>
 
-        <View>
+        <View style={[Layout.row, Gutters.smallTMargin]}>
           <TouchableOpacity
-            style={[Common.button.circle, Gutters.regularBMargin]}
+            style={[Common.button.circle, Gutters.regularBMargin, Gutters.smallRMargin]}
             onPress={() => navigation.navigate('Topic')}
           >
             <Image source={Images.icons.colors} style={styles.iconBackground} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[Common.button.circle, Gutters.regularBMargin]}
+            onPress={() => Sentry.captureException(new Error('First error'))}
+          >
+            <Text style={[Fonts.textSmall]}>Sentry</Text>
           </TouchableOpacity>
         </View>
       </View>
