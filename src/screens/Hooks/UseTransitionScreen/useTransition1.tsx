@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState, useTransition } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import { Input } from '../../../components/Atoms/Input/Input'
-import { City } from '../../../constant/city'
+import { Input } from '@components/Atoms'
+import { City } from '@/constant/city.ts'
 
 // dont work
 export const UseTransitionScreen = memo(() => {
