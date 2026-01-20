@@ -1,17 +1,6 @@
-import React, { memo } from 'react'
-import { TouchableOpacity, Text, StyleSheet, ViewStyle } from 'react-native'
-
-export enum ButtonType {
-  Small = 'small',
-  Default = 'default',
-}
-interface ButtonProps {
-  text: string
-  onPress?: () => void
-  type?: ButtonType.Small | ButtonType.Default
-  styleContainer?: ViewStyle
-  disabled?: boolean
-}
+import React, { memo } from 'react';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { ButtonType, ButtonProps } from './Button.types';
 
 export const Button = memo<ButtonProps>(
   ({ text, onPress, type = ButtonType.Default, styleContainer, disabled }) => {
@@ -29,9 +18,9 @@ export const Button = memo<ButtonProps>(
           {text}
         </Text>
       </TouchableOpacity>
-    )
+    );
   },
-)
+);
 
 const styles = StyleSheet.create({
   [`${ButtonType.Default}Container`]: {
@@ -87,4 +76,4 @@ const styles = StyleSheet.create({
   textDisabled: {
     color: '#aaa',
   },
-})
+});

@@ -1,5 +1,5 @@
 export { Brand } from './Brand';
-export { Button } from './Button';
+export * from './Button';
 export { CheckBox } from './CheckBox';
 export { Title } from './Title';
 export { Input } from './Input';

@@ -31,6 +31,10 @@ export const TopicScreen = memo(() => {
     return navigation.navigate('ClassLifeCycleScreen');
   }, [navigation]);
 
+    const navigateToErrorBoundary = useCallback(() => {
+      return navigation.navigate('ErrorBoundaryScreen');
+    }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <Title title={'Topics'} />
@@ -62,6 +66,11 @@ export const TopicScreen = memo(() => {
       <Button
         text={'ClassLifeCycleScreen'}
         onPress={navigateToClassLifeCycleScreen}
+        styleContainer={styles.buttonContainer}
+      />
+      <Button
+        text={'Error Boundary'}
+        onPress={navigateToErrorBoundary}
         styleContainer={styles.buttonContainer}
       />
     </ScrollView>
