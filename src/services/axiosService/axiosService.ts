@@ -4,7 +4,7 @@ import { setupInterceptors } from '@services/axiosService/interceptors.ts';
 import { IAuthStore } from '@services/storageService/types.ts';
 
 const DEFAULT_CONFIG: AxiosConfig = {
-  baseURL: 'https://nest-ruby-theta.vercel.app/',
+  baseURL: 'https://nest-ruby-theta.vercel.app',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
