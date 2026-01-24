@@ -1,16 +1,18 @@
-import React, { memo, forwardRef } from 'react'
-import { TextInput, View, StyleSheet, Text } from 'react-native'
+import React, { memo, forwardRef } from 'react';
+import { TextInput, View, StyleSheet, Text } from 'react-native';
+import { mergeTestId } from '@utils/mergeTestId.ts';
 
 interface InputProps {
-  value: string
-  label?: string
-  error?: string
-  placeholder?: string
-  onChangeText: (text: string) => void
-  inputStyle?: object
-  containerStyle?: object
-  errorTextStyle?: object
-  keyboardType?: 'default' | 'numeric' | 'email-address' | 'phone-pad'
+  value: string;
+  label?: string;
+  error?: string;
+  placeholder?: string;
+  onChangeText: (text: string) => void;
+  inputStyle?: object;
+  containerStyle?: object;
+  errorTextStyle?: object;
+  keyboardType?: 'default' | 'numeric' | 'email-address' | 'phone-pad';
+  testID: string;
 }
 
 export const Input = memo(
@@ -26,17 +28,32 @@ export const Input = memo(
         containerStyle,
         errorTextStyle,
         keyboardType = 'default',
+        testID,
       },
       ref,
     ) => {
       return (
-        <View style={[styles.container, containerStyle]}>
+        <View
+          style={[styles.container, containerStyle]}
+          testID={mergeTestId('container', testID)}
+        >
           {label && (
-            <View style={styles.labelContainer}>
-              <Text style={styles.labelText}>{label}</Text>
+            <View
+              style={styles.labelContainer}
+              testID={mergeTestId('label-container', testID)}
+            >
+              <Text
+                style={styles.labelText}
+                testID={mergeTestId('label-text', testID)}
+              >
+                {label}
+              </Text>
             </View>
           )}
-          <View style={styles.inputContainer}>
+          <View
+            style={styles.inputContainer}
+            testID={mergeTestId('input-container', testID)}
+          >
             <TextInput
               placeholder={placeholder}
               value={value}
@@ -44,18 +61,24 @@ export const Input = memo(
               style={[styles.input, inputStyle]}
               keyboardType={keyboardType}
               ref={ref}
+              testID={mergeTestId('input', testID)}
             />
           </View>
           {error && (
             <View>
-              <Text style={[styles.errorText, errorTextStyle]}>{error}</Text>
+              <Text
+                style={[styles.errorText, errorTextStyle]}
+                testID={mergeTestId('error-text', testID)}
+              >
+                {error}
+              </Text>
             </View>
           )}
         </View>
-      )
+      );
     },
   ),
-)
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -86,4 +109,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 5,
   },
-})
+});

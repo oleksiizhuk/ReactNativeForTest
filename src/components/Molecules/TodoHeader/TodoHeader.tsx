@@ -1,20 +1,23 @@
-import React, { memo } from 'react'
-import { Text, View } from 'react-native'
-import { styles } from '@screens/Todo/template/styles.ts'
-import { Input } from '../../Atoms/Input/Input'
-import { Button, ButtonType } from '../../Atoms/Button/Button'
+import React, { memo } from 'react';
+import { Text, View } from 'react-native';
+import { styles } from '@screens/Todo/template/styles.ts';
+import { Input } from '@components/Atoms';
+import { Button, ButtonType } from '@components/Atoms';
+import { mergeTestId } from '@/utils';
+import { TodoHeaderProps } from '@components/Molecules/TodoHeader/TodoHeader.types.ts';
 
-interface TodoHeaderProps {
-  value: string
-  onChange: (value: string) => void
-  addTodoItem: () => void
-}
+const testID = 'TodoHeader';
+
 export const TodoHeader = memo<TodoHeaderProps>(
   ({ value, onChange, addTodoItem }) => {
     return (
       <>
         <View style={styles.header}>
-          <Input value={value} onChangeText={onChange} />
+          <Input
+            value={value}
+            onChangeText={onChange}
+            testID={mergeTestId(testID, 'input')}
+          />
           <Button
             text={'Add Todo'}
             type={ButtonType.Small}
@@ -30,6 +33,6 @@ export const TodoHeader = memo<TodoHeaderProps>(
           <Button text={'Redo'} type={ButtonType.Small} />
         </View>
       </>
-    )
+    );
   },
-)
+);

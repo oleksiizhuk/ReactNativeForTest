@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { Input } from '@components/Atoms';
 import { City } from '@/constant/city';
+import { mergeTestId } from '@/utils';
 
 // Expensive recursive Fibonacci - O(2^n) complexity, no memoization
 // This intentionally slow function simulates heavy computation
@@ -28,6 +29,8 @@ const calculateExpensiveScore = (str: string): number => {
   const n = Math.min(str.length + 8, 20); // Fib(25) = 75,025 - noticeable but manageable
   return fibonacci(n);
 };
+
+const testID = 'useTransitionScreen';
 
 export const UseTransitionScreen = memo(() => {
   const [inputValue, setInputValue] = useState<string>('');
@@ -49,24 +52,30 @@ export const UseTransitionScreen = memo(() => {
   // Each item also triggers expensive Fibonacci calculation
   const filteredItems = useMemo(() => {
     return items
-      .filter((item) =>
-        item.toLowerCase().includes(filteredValue.toLowerCase()),
-      )
-      .map((item) => ({
+      .filter(item => item.toLowerCase().includes(filteredValue.toLowerCase()))
+      .map(item => ({
         name: item,
         score: calculateExpensiveScore(item), // Expensive!
       }));
   }, [filteredValue, items]);
 
   const renderItem = useCallback(
-    ({ item, index }: { item: { name: string; score: number }; index: number }) => (
+    ({
+      item,
+      index,
+    }: {
+      item: { name: string; score: number };
+      index: number;
+    }) => (
       <View style={styles.listItem}>
         <View style={styles.indexBadge}>
           <Text style={styles.indexText}>{index + 1}</Text>
         </View>
         <View style={styles.itemContent}>
           <Text style={styles.itemText}>{item.name}</Text>
-          <Text style={styles.scoreText}>Fib: {item.score.toLocaleString()}</Text>
+          <Text style={styles.scoreText}>
+            Fib: {item.score.toLocaleString()}
+          </Text>
         </View>
       </View>
     ),
@@ -102,6 +111,7 @@ export const UseTransitionScreen = memo(() => {
           placeholder="Search cities..."
           label="Search"
           containerStyle={styles.inputContainer}
+          testID={mergeTestId(testID, 'input')}
         />
 
         {/* Results count & loading indicator */}
