@@ -10,4 +10,5 @@ export interface ButtonProps {
   type?: ButtonType.Small | ButtonType.Default;
   styleContainer?: ViewStyle;
   disabled?: boolean;
+  testID?: string;
 }

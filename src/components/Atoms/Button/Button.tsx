@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { ButtonType, ButtonProps } from './Button.types';
 
 export const Button = memo<ButtonProps>(
-  ({ text, onPress, type = ButtonType.Default, styleContainer, disabled }) => {
+  ({ text, onPress, type = ButtonType.Default, styleContainer, disabled, testID }) => {
     return (
       <TouchableOpacity
         onPress={onPress}
@@ -13,6 +13,7 @@ export const Button = memo<ButtonProps>(
           styleContainer,
         ]}
         disabled={disabled}
+        testID={testID}
       >
         <Text style={[styles[`${type}Text`], disabled && styles.textDisabled]}>
           {text}

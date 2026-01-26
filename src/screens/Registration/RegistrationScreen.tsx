@@ -66,6 +66,7 @@ export const RegistrationScreen = () => {
             text={isLoading ? 'Registering...' : 'Register'}
             onPress={onRegister}
             disabled={!isFormValid || isLoading}
+            testID={mergeTestId(testID, 'button-register')}
           />
         </View>
       </View>

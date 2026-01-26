@@ -186,6 +186,7 @@ export const ExampleTemplate = ({
               Gutters.smallRMargin,
             ]}
             onPress={() => navigation.navigate('Registration')}
+            testID="home-button-registration"
           >
             <Image source={Images.icons.colors} style={styles.iconBackground} />
           </TouchableOpacity>
